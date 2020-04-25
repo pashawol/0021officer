@@ -2,6 +2,7 @@ module.exports = () => {
 	$.gulp.task('sass', () => {
 		var processors = [
 			// $.pcmq,
+			// $.postcssCustomProperties,
 			$.gp.autoprefixer,
 			$.cssnano,
 			$.nested,

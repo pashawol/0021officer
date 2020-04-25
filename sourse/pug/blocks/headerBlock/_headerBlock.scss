@@ -1,6 +1,10 @@
 // start .headerBlock
 .headerBlock {
 	margin-bottom: 1px;
+	min-height: 100vh;
+	min-height: calc(var(--vh, 1vh) * 100);
+	// background-image: url(../img);
+	// background-color: #000000;
 
 	h1 {
 		margin-bottom: 1px;

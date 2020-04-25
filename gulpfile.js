@@ -18,6 +18,7 @@ global.$ = {
 	cssnano: require('cssnano'),
 	nested: require('postcss-nested'),
 	pcmq: require('postcss-combine-media-query'),
+	postcssCustomProperties: require('postcss-custom-properties'),
 	path: {
 		tasks: require('./gulp/config/tasks.js'),
 	},
