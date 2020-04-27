@@ -128,6 +128,19 @@
 	&__inline-catalog-block{
 		padding-bottom: rem(10);
 		padding-top: rem(10);
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-wrap: wrap;
+			li{
+				width: 50%;
+				@include media-breakpoint-up(md){
+					width: auto;
+				}
+			}
+		}
 
 		@include media-breakpoint-down(sm){
 			display: none;
@@ -143,7 +156,7 @@
 			border-radius: 5px;
 			box-shadow: 0px 2.5px 5px 0px $light;
 			.top-nav__inline-catalog-link{
-				width: 50%;
+				//width: 50%;
 			}
 		}
 	}
@@ -177,52 +190,10 @@
 		padding-bottom: rem(30);
 	}
 	&__burger-cont{
-		//background-color: red;
-		display: inline-flex;
-		vertical-align: top;
-		margin-right: rem(25);
-		height: 25px;
-		cursor: pointer;
-		span,
-		span:before,
-		span:after{
-			display: block;
-			width: 16px;
-			height: 1px;
-			background-color: $black;
-			@include mt();
-		}
-		span{
-			margin: auto;
-			position: relative;
-		}
-		span:before,
-		span:after{
-			content: '';
-			position: absolute;
-		}
-		span:before{
-			top: -7px;
-		}
-		span:after{
-			top: 7px;
-		}
-		&.collapsed{
-			//background-color: red;
-			span{
-				background-color: transparent;
-			}
-			span:before{
-				transform: rotate(45deg);
-				top: 0;
-			}
-			span:after{
-				transform: rotate(-45deg);
-				top: 0;
-			}
-		}
+
 	}
 	&__catalog-txt{
+		cursor: pointer;
 		font-weight: bold;
 		font-size: 20px;
 		line-height: 25px;

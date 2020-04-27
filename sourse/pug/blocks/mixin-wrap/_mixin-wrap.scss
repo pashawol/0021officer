@@ -34,3 +34,39 @@
 	}
 }
 
+//breadcrumbs
+
+.breadcrumb{
+	background-color: transparent;
+	padding-left: 0;
+	margin-bottom: 0;
+	.breadcrumb-item{
+		font-size: rem(12);
+		padding-right: 30px;
+		padding-left: 0;
+		position: relative;
+		&:before, &:after{
+			padding: 0;
+			content: "";
+			position: absolute;
+			right: 13.25px;
+			width: 4px;
+			height: 1px;
+			background-color: black;
+		}
+		&:before{
+			transform: rotate(45deg);
+			top: calc(50% - 1px);
+		}
+		&:after{
+			transform: rotate(-45deg);
+			top: calc(50% + 1px);
+		}
+		&:last-child{
+			&:before, &:after{
+				display: none;
+			}
+		}
+	}
+}
+

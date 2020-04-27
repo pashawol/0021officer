@@ -412,8 +412,11 @@ function eventHandler() {
 				passive: true
 			});
 		}
-	} // sCatalog
+	}
 
+	$('.top-nav__catalog-txt').click(function () {
+		$('.top-nav__burger-cont').click();
+	}); // sCatalog
 
 	var clotherSlider = new Swiper('.clother-slider', {
 		slidesPerView: 1,

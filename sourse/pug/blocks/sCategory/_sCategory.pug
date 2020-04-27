@@ -1,0 +1,31 @@
+mixin sCategory()
+	// start sCategory
+	+b.SECTION.sCategory.section#sCategory&attributes(attributes)
+		.container
+			+breadcrumb('Главная', 'Каталог', 'Жилеты и разгрузки')
+			h2.h2 Жилеты и разгрузки
+			+e.headline-strip
+				+e.catalot-col
+					+e.burger-cont.burger-frame
+						span
+					+e.SPAN.catalog-txt Каталог
+				+e.sort-show-col
+					+e.sort-select-box
+						+e.SPAN.sort-txt Сортировать:
+						+e.SELECT.sort-select(style="background-image: url(img/@2x/vector-down.png);") По наименованию
+							option По наименованию
+							option По наименованию2
+							option По наименованию3
+					+e.show-for
+						.show-for-cont
+							span.show-for-txt Показывать по:
+							.show-for-btn-box
+								button.show-for-btn 12
+								button.show-for-btn.active 24
+								button.show-for-btn 48
+				+e.vue-btns-box-col.d-none.d-sm-block
+					+e.BUTTON.vue-btn.vue-btn-square.active
+						+icon("vue-btn-square")
+					+e.BUTTON.vue-btn.vue-btn-table
+						+icon("vue-btn-table")
+	// end sCategory

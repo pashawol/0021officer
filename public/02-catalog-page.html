@@ -94,19 +94,46 @@
 									</form>
 								</div>
 							</div>
-							<div class="top-nav__contact-col col col-auto">
-								<div class="phone-block">
+							<div class="top-nav__contact-col col col-auto"><a class="phone-block" href="tel:+7-916-907-18-73">
 									<svg class="icon icon-phone ">
 										<use xlink:href="img/svg/sprite.svg#phone"></use>
-									</svg><a class="phone-num" href="tel:7-916-907-18-73">+7-916-907-18-73</a>
-								</div><a class="mail-link" href="mailto:sample@samplemail.org">sample@samplemail.org</a>
+									</svg>
+									<div class="phone-num">+7-916-907-18-73</div></a><a class="mail-link" href="mailto:sample@samplemail.org">sample@samplemail.org</a>
 							</div>
-							<div class="top-nav__inline-catalog-block col-12"><a class="top-nav__inline-catalog-link" href="#">КОСТЮМЫ</a><a class="top-nav__inline-catalog-link" href="#">КУРТКИ</a><a class="top-nav__inline-catalog-link" href="#">БРЮКИ</a><a class="top-nav__inline-catalog-link" href="#">ЖИЛЕТЫ РАЗГРУЗКИ</a><a class="top-nav__inline-catalog-link" href="#">ГОЛОВНЫЕ УБОРЫ</a><a class="top-nav__inline-catalog-link" href="#">ФУРНИТУРА</a><a class="top-nav__inline-catalog-link" href="#">ШЕВРОНЫ ПОГОНЫ</a><a class="top-nav__inline-catalog-link" href="#">ТРИКОТАЖ</a><a class="top-nav__inline-catalog-link" href="#">РУБАШКИ</a><a class="top-nav__inline-catalog-link" href="#">РЮКЗАКИ СУМКИ</a><a class="top-nav__inline-catalog-link" href="#">ОБУВЬ</a><a class="top-nav__inline-catalog-link" href="#">СВИТЕРА ТОЛСТОВКИ</a><a class="top-nav__inline-catalog-link" href="#">АКСЕССУАРЫ</a>
+							<div class="top-nav__inline-catalog-block col-12">
+								<ul class="menu">
+									<li class="menu-item"><a class="top-nav__inline-catalog-link" href="#">КОСТЮМЫ</a>
+									</li>
+									<li><a class="top-nav__inline-catalog-link" href="#">КУРТКИ</a>
+									</li>
+									<li><a class="top-nav__inline-catalog-link" href="#">БРЮКИ</a>
+									</li>
+									<li><a class="top-nav__inline-catalog-link" href="#">ЖИЛЕТЫ РАЗГРУЗКИ</a>
+									</li>
+									<li><a class="top-nav__inline-catalog-link" href="#">ГОЛОВНЫЕ УБОРЫ</a>
+									</li>
+									<li><a class="top-nav__inline-catalog-link" href="#">ФУРНИТУРА</a>
+									</li>
+									<li><a class="top-nav__inline-catalog-link" href="#">ШЕВРОНЫ ПОГОНЫ</a>
+									</li>
+									<li><a class="top-nav__inline-catalog-link" href="#">ТРИКОТАЖ</a>
+									</li>
+									<li><a class="top-nav__inline-catalog-link" href="#">РУБАШКИ</a>
+									</li>
+									<li><a class="top-nav__inline-catalog-link" href="#">РЮКЗАКИ СУМКИ</a>
+									</li>
+									<li><a class="top-nav__inline-catalog-link" href="#">ОБУВЬ</a>
+									</li>
+									<li><a class="top-nav__inline-catalog-link" href="#">СВИТЕРА ТОЛСТОВКИ</a>
+									</li>
+									<li><a class="top-nav__inline-catalog-link" href="#">АКСЕССУАРЫ</a>
+									</li>
+								</ul>
 							</div>
 							<div class="top-nav__mobile-category-search-strip d-block d-md-none col-12">
 								<div class="row">
 									<div class="col">
-										<div class="top-nav__burger-cont"><span></span>
+										<div class="top-nav__burger-cont burger-frame"><span></span>
 										</div><span class="top-nav__catalog-txt">Каталог товаров</span>
 									</div>
 									<div class="top-nav__mobile-search-icon-cont col-auto">
@@ -125,6 +152,59 @@
 				<!-- end top-nav-->
 			</header>
 			<!-- end HEADER.header-->
+			<!-- start sCategory-->
+			<section class="sCategory section" id="sCategory">
+				<div class="container">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+							<li class="breadcrumb-item" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Главная</span>
+									<meta itemprop="position" content="1"/></a></li>
+							<li class="breadcrumb-item" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Каталог</span>
+									<meta itemprop="position" content="2"/></a></li>
+							<li class="breadcrumb-item active" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Жилеты и разгрузки</span>
+									<meta itemprop="position" content="3"/></a></li>
+						</ol>
+					</nav>
+					<h2 class="h2">Жилеты и разгрузки</h2>
+					<div class="sCategory__headline-strip">
+						<div class="sCategory__catalot-col">
+							<div class="sCategory__burger-cont burger-frame"><span></span>
+							</div><span class="sCategory__catalog-txt">Каталог</span>
+						</div>
+						<div class="sCategory__sort-show-col">
+							<div class="sCategory__sort-select-box"><span class="sCategory__sort-txt">Сортировать:</span>
+								<select class="sCategory__sort-select" style="background-image: url(img/@2x/vector-down.png);">По наименованию
+									<option>По наименованию</option>
+									<option>По наименованию2</option>
+									<option>По наименованию3</option>
+								</select>
+							</div>
+							<div class="sCategory__show-for">
+								<div class="show-for-cont"><span class="show-for-txt">Показывать по:</span>
+									<div class="show-for-btn-box">
+										<button class="show-for-btn">12</button>
+										<button class="show-for-btn active">24</button>
+										<button class="show-for-btn">48</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sCategory__vue-btns-box-col d-none d-sm-block">
+							<button class="sCategory__vue-btn vue-btn-square active">
+								<svg class="icon icon-vue-btn-square ">
+									<use xlink:href="img/svg/sprite.svg#vue-btn-square"></use>
+								</svg>
+							</button>
+							<button class="sCategory__vue-btn vue-btn-table">
+								<svg class="icon icon-vue-btn-table ">
+									<use xlink:href="img/svg/sprite.svg#vue-btn-table"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sCategory-->
 			<!-- start seoSection-->
 			<section class="seoSection section" id="seoSection">
 				<div class="container">
@@ -136,7 +216,7 @@
 							<div class="col-12 col-sm-6 col-lg-3">
 								<div class="news-box__img-box-container"><a class="news-box__img-box" href="#"><img class="news-box__news-img" src="img/@2x/news-item1.png" alt="" role="presentation"/><span class="news-box__date-span">17.04.2020</span></a>
 								</div>
-								<h4 class="news-box__news-headline h4">Заголовок для материала или новости
+								<h4 class="news-box__news-headline h4"><a href="#">Заголовок для материала или новости</a>
 								</h4>
 								<p class="news-box__news-txt">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
 								</p>
@@ -144,7 +224,7 @@
 							<div class="col-12 col-sm-6 col-lg-3">
 								<div class="news-box__img-box-container"><a class="news-box__img-box" href="#"><img class="news-box__news-img" src="img/@2x/news-item2.png" alt="" role="presentation"/><span class="news-box__date-span">17.04.2020</span></a>
 								</div>
-								<h4 class="news-box__news-headline h4">Заголовок для материала или новости
+								<h4 class="news-box__news-headline h4"><a href="#">Заголовок для материала или новости</a>
 								</h4>
 								<p class="news-box__news-txt">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
 								</p>
@@ -152,7 +232,7 @@
 							<div class="col-12 col-sm-6 col-lg-3">
 								<div class="news-box__img-box-container"><a class="news-box__img-box" href="#"><img class="news-box__news-img" src="img/@2x/news-item3.png" alt="" role="presentation"/><span class="news-box__date-span">17.04.2020</span></a>
 								</div>
-								<h4 class="news-box__news-headline h4">Заголовок для материала или новости
+								<h4 class="news-box__news-headline h4"><a href="#">Заголовок для материала или новости</a>
 								</h4>
 								<p class="news-box__news-txt">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
 								</p>
@@ -160,7 +240,7 @@
 							<div class="col-12 col-sm-6 col-lg-3">
 								<div class="news-box__img-box-container"><a class="news-box__img-box" href="#"><img class="news-box__news-img" src="img/@2x/news-item4.png" alt="" role="presentation"/><span class="news-box__date-span">17.04.2020</span></a>
 								</div>
-								<h4 class="news-box__news-headline h4">Заголовок для материала или новости
+								<h4 class="news-box__news-headline h4"><a href="#">Заголовок для материала или новости</a>
 								</h4>
 								<p class="news-box__news-txt">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
 								</p>

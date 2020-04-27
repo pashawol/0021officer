@@ -356,6 +356,10 @@ function eventHandler() {
 			window.removeEventListener('resize', removeInlineStyle, {passive: true});
 		}
 	}
+
+	$('.top-nav__catalog-txt').click(function () {
+		$('.top-nav__burger-cont').click();
+	});
 	// sCatalog
 
 	const clotherSlider = new Swiper('.clother-slider', {

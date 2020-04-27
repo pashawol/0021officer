@@ -2,6 +2,7 @@
 	// start .seoSection
 	.seoSection {
 		background-color: $light-gray;
+		//border: 1px solid red;
 		padding: rem(50) 0;
 
 		.section-title{
@@ -56,10 +57,14 @@
 			&__news-headline{
 				line-height: rem(24);
 				margin: rem(20) 0 rem(10) 0;
+				a{
+					color: $black;
+				}
 			}
 			&__news-txt{
 				font-size: rem(14px);
 				padding-bottom: rem(50);
+				margin-bottom: 0;
 			}
 			&__show-more-btn{
 				display: block;

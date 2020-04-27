@@ -37,16 +37,16 @@ mixin top-nav()
 								+e.tag-link(href="#") Штаны
 								+e.tag-link(href="#") Разгрузки
 				+e.contact-col.col.col-auto
-					.phone-block
+					a.phone-block(href="tel:+7-916-907-18-73")
 						+icon('phone')
-						a.phone-num(href="tel:7-916-907-18-73") +7-916-907-18-73
+						.phone-num +7-916-907-18-73
 					a.mail-link(href="mailto:sample@samplemail.org") sample@samplemail.org
 				+e.inline-catalog-block.col-12
 					+inlineCatalogContent()
 				+e.mobile-category-search-strip.d-block.d-md-none.col-12
 					.row
 						.col
-							+e.burger-cont
+							+e.burger-cont.burger-frame
 								span
 							+e.SPAN.catalog-txt Каталог товаров
 						+e.mobile-search-icon-cont.col-auto
@@ -56,16 +56,30 @@ mixin top-nav()
 	// end top-nav
 
 mixin inlineCatalogContent()
-	+e.A.inline-catalog-link(href="#") КОСТЮМЫ
-	+e.A.inline-catalog-link(href="#") КУРТКИ
-	+e.A.inline-catalog-link(href="#") БРЮКИ
-	+e.A.inline-catalog-link(href="#") ЖИЛЕТЫ РАЗГРУЗКИ
-	+e.A.inline-catalog-link(href="#") ГОЛОВНЫЕ УБОРЫ
-	+e.A.inline-catalog-link(href="#") ФУРНИТУРА
-	+e.A.inline-catalog-link(href="#") ШЕВРОНЫ ПОГОНЫ
-	+e.A.inline-catalog-link(href="#") ТРИКОТАЖ
-	+e.A.inline-catalog-link(href="#") РУБАШКИ
-	+e.A.inline-catalog-link(href="#") РЮКЗАКИ СУМКИ
-	+e.A.inline-catalog-link(href="#") ОБУВЬ
-	+e.A.inline-catalog-link(href="#") СВИТЕРА ТОЛСТОВКИ
-	+e.A.inline-catalog-link(href="#") АКСЕССУАРЫ
+	ul.menu
+		li.menu-item
+			+e.A.inline-catalog-link(href="#") КОСТЮМЫ
+		li
+			+e.A.inline-catalog-link(href="#") КУРТКИ
+		li
+			+e.A.inline-catalog-link(href="#") БРЮКИ
+		li
+			+e.A.inline-catalog-link(href="#") ЖИЛЕТЫ РАЗГРУЗКИ
+		li
+			+e.A.inline-catalog-link(href="#") ГОЛОВНЫЕ УБОРЫ
+		li
+			+e.A.inline-catalog-link(href="#") ФУРНИТУРА
+		li
+			+e.A.inline-catalog-link(href="#") ШЕВРОНЫ ПОГОНЫ
+		li
+			+e.A.inline-catalog-link(href="#") ТРИКОТАЖ
+		li
+			+e.A.inline-catalog-link(href="#") РУБАШКИ
+		li
+			+e.A.inline-catalog-link(href="#") РЮКЗАКИ СУМКИ
+		li
+			+e.A.inline-catalog-link(href="#") ОБУВЬ
+		li
+			+e.A.inline-catalog-link(href="#") СВИТЕРА ТОЛСТОВКИ
+		li
+			+e.A.inline-catalog-link(href="#") АКСЕССУАРЫ

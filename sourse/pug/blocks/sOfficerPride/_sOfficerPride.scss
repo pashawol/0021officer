@@ -1,7 +1,8 @@
 
 	// start .sOfficerPride
 	.sOfficerPride {
-		 
+		padding-top: 0;
+		padding-bottom: 0;
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -30,43 +31,40 @@
 
 .officer-pride-bl{
 	&__officer-pride-txt{
+		line-height: 1.2;
 		@include media-breakpoint-up(lg){
 			max-width: 78%;
 		}
 		padding-bottom: rem(20);
 	}
 	&__txt-row{
-		display: flex;
-		padding-bottom: rem(90);
+		//display: flex;
+		padding-bottom: rem(60);
 
-		flex-wrap: wrap;
+		//flex-wrap: wrap;
 		@include media-breakpoint-up(lg){
-			flex-wrap: nowrap;
+			//flex-wrap: nowrap;
 		}
 	}
 	&__left-col{
-		width: 100%;
+		//width: 100%;
 		@include media-breakpoint-up(lg){
-			width: 55.5%;
+			//width: 55.5%;
 		}
-		p{
-			text-align: justify;
-			@include media-breakpoint-up(lg) {
-				text-align: left;
-			}
-		}
+
 	}
 	&__right-col{
-		border: 1px solid $primary;
-		padding: rem(30) rem(20);
-		font-size: rem(14px);
-		color: $primary;
-
-		margin-left: 0;
-		width: 100%;
+		p{
+			border: 1px solid $primary;
+			padding: rem(30) rem(20);
+			font-size: rem(14px);
+			color: $primary;
+		}
+		//margin-left: 0;
+		//width: 100%;
 		@include media-breakpoint-up(lg){
-			width: 31%;
-			margin-left: auto;
+		//	width: 31%;
+		//	margin-left: auto;
 		}
 	}
 	&__green-pills-bl{

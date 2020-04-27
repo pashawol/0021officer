@@ -2,6 +2,7 @@
 	// start .sCatalog
 	.sCatalog {
 		padding-top: 0;
+		padding-bottom: 0;
 
 		.clother-slider{
 			padding-bottom: 20px;
@@ -10,14 +11,18 @@
 		.clother-slide{
 			position: relative;
 			border-radius: rem(10px);
-			height: 320px;
 
+			background-color: darken($green, 15);
+
+			//min-height: 320px;
 			@include media-breakpoint-up(sm){
-				height: rem(330);
+				//min-height: rem(330);
 			}
 
 			&__background-img{
+				//display: none;
 				position: absolute;
+				z-index: 0;
 				left: 0;
 				top: 0;
 				width: 100%;
@@ -27,7 +32,8 @@
 			}
 			&__slide-content{
 				border-radius: rem(10px);
-				position: absolute;
+				position: relative;
+				z-index: 1;
 				left: 0;
 				top: 0;
 				width: 100%;
@@ -102,17 +108,21 @@
 				height: 100%;
 				//background-color: rgba(red, .5);
 				right: 2%;
-				@include media-breakpoint-up(xl){
-					right: 5%;
-				}
+
 				.slide-img{
-					width: 100%;
+					max-width: 100%;
+					max-height: 100%;
 					height: 100%;
-					object-fit: cover;
 				}
 			}
 
-			&__{}
+			&__learn-more-btn{
+				//background-color: red;
+				//font-family: $default-font;
+				font-weight: bold;
+				font-size: 14px;
+				padding: rem(10px) rem(30);
+			}
 			&__{}
 			&__{}
 			&__{}
@@ -152,7 +162,7 @@
 	.category-item{
 		border: 1.5px solid $light;
 		border-radius: rem(15);
-		margin-bottom: rem(40px);
+		margin-bottom: 30px;
 
 		@include mt();
 		position: relative;
@@ -160,12 +170,7 @@
 		padding-top: 100%;
 
 		&:hover{
-			@include media-breakpoint-up(lg){
-				box-shadow: 0px 0px 22px -3px $light;
-				.category-item__category-img{
-					transform: scale(1.2);
-				}
-			}
+			box-shadow: 0px 0px 22px -3px $light;
 		}
 		&__category-link{
 			position: absolute;
@@ -181,26 +186,36 @@
 		&__category-img-cont{
 			margin-left: auto;
 			margin-right: auto;
-			margin-top: 15%;
-			width: 50%;
-			height: 50%;
+
+			text-align: center;
+			max-width: 90%;
+
+			max-height: 60%;
+			margin-top: 10%;
+			@include media-breakpoint-up(xl){
+				max-height: 70%;
+				margin-top: 15%;
+			}
 		}
 		&__category-img{
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			@include mt();
+			max-width: 100%;
+			max-height: 100%;
 		}
 		&__category-txt{
+			padding: 0 5px;
 			position: absolute;
 			width: 100%;
 			text-align: center;
-
+			line-height: 1.2;
 			color: $black;
 
-			font-size: 14px;
+			font-size: rem(14px);
 			bottom: rem(10);
-			@include media-breakpoint-up(sm) {
+			@include media-breakpoint-up(md) {
+				font-size: rem(16px);
+				bottom: rem(15);
+			}
+			@include media-breakpoint-up(xl) {
 				font-size: rem(22.5px);
 				bottom: rem(25);
 			}
