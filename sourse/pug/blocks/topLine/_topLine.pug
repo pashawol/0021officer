@@ -1,9 +1,12 @@
 mixin topLine()
 	// start topLine
-	+b.SECTION.topLine.section#topLine&attributes(attributes)
+	+b.topLine#topLine&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 topLine
-				
 			.row
+				.col.col-auto.location-bl
+					+icon('location')
+					span Москва
+				.main-menu.col.col-auto.d-none.d-md-flex
+					+mnu()
+				+mob-mnu()
 	// end topLine

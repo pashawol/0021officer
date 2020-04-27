@@ -1,6 +1,189 @@
 .footer {
-		
+  padding: rem(50) 0 rem(50) 0;
+  @include media-breakpoint-up(lg){
+    padding: rem(50) 0 rem(100) 0;
+  }
 
+  &__f-menu-strip{
+    padding-bottom: rem(35);
+  }
+  &__logo-col{
+    filter: grayscale(1);
+    a{
+      display: block;
+      width: 64px;
+      height: auto;
+
+      @include media-breakpoint-up(md) {
+        width: 94px;
+      }
+      img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  }
+  &__menu-col{
+    min-width: 100%;
+    margin-bottom: rem(30);
+    @include media-breakpoint-up(xl) {
+      min-width: 0;
+      margin-bottom: 0;
+    }
+    ul{
+      list-style: none;
+      margin: 0;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      flex-wrap: wrap;
+      li{
+        a{
+          text-transform: uppercase;
+          color: $black;
+          font-weight: bold;
+          font-size: 12px;
+          @include mt();
+        }
+        &:hover{
+          a{
+            text-decoration: none;
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+  &__contact-col{
+    margin-left: auto;
+    @include media-breakpoint-up(xl){
+      margin-left: 0;
+    }
+
+    .phone-num{
+      display: block;
+      font-weight: bold;
+      color: $black;
+
+      line-height: rem(30);
+      font-size: rem(18);
+      @include media-breakpoint-up(md){
+        font-size: rem(24px);
+      }
+    }
+    .order-call{
+      margin-top: rem(7);
+      display: block;
+      text-align: right;
+      color: $primary;
+      font-size: rem(12px);
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+  //email-subscribe
+  &__email-subscribe{
+    border-radius: rem(10);
+    background: linear-gradient(90deg, #457C3A 0%, #AE1F24 100%);
+    padding: rem(30);
+    margin-bottom: rem(30);
+    .form-wrap{
+      form{
+        display: flex;
+
+
+        flex-wrap: wrap;
+        @include media-breakpoint-up(xl){
+          flex-wrap: nowrap;
+          justify-content: space-between;
+        }
+      }
+      &__email-subsribe-txt{
+        font-weight: bold;
+        font-size: rem(12px);
+        text-transform: uppercase;
+        color: $white;
+
+
+        padding-bottom: rem(15);
+        @include media-breakpoint-up(xl){
+          max-width: 35%;
+          padding-bottom: 0;
+        }
+      }
+      &__input-wrap{
+        width: 100%;
+        @include media-breakpoint-up(md) {
+          width: 50%;
+        }
+        @include media-breakpoint-up(xl){
+          width: 32%;
+        }
+
+        margin-bottom: 0;
+      }
+      &__subscribe-btn{
+        @include media-breakpoint-down(sm){
+          background-color: darken($primary, 10);
+          border-color: darken($primary, 10);
+        }
+
+        margin-top: rem(15);
+        width: 100%;
+        @include media-breakpoint-up(md) {
+          margin-top: rem(0);
+          margin-left: rem(30);
+          width: 20%;
+        }
+        @include media-breakpoint-up(xl){
+          margin-left: 0;
+          width: 20%;
+        }
+
+
+        height: calc(1.5em + .75rem + 2px);
+      }
+      &__{}
+    }
+  }
+  //
+  &__all-rights-reserved{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+    @include media-breakpoint-up(lg){
+      flex-wrap: nowrap;
+    }
+  }
+  &__all-rights-txt{
+    font-size: rem(12);
+    color: $black;
+
+    width: 100%;
+    padding-bottom: rem(15);
+    @include media-breakpoint-up(lg){
+      max-width: 50%;
+      width: auto;
+      padding-bottom: rem(0);
+    }
+  }
+  &__inner-link{
+    text-decoration: underline;
+    font-size: rem(12);
+
+    width: 100%;
+    padding-bottom: rem(15);
+    @include media-breakpoint-up(sm){
+      width: auto;
+      padding-bottom: 0;
+    }
+  }
+  &__{}
 
 // 
 @include media-breakpoint-up(xl) {}

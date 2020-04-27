@@ -3,7 +3,9 @@ mixin form-head()
 		input(type='hidden', class="order", name='order', value=`Заявка  с сайта` ) 
 		block
 
-mixin input(placeholder,  t='text', label, name= t)
+
+//- add parentMod to other cases if necessary
+mixin input(placeholder,  t='text', label, name= t, parentMod='modificator')
 	mixin t(t='text',placeholder, name= t)
 		if t== "textarea"
 			+e.TEXTAREA.input.form-control(placeholder= placeholder name= name)&attributes(attributes)
@@ -14,7 +16,7 @@ mixin input(placeholder,  t='text', label, name= t)
 					option(value=` placeholder ${x}`)= `placeholder ${x}`
 		else
 			+e.INPUT.input.form-control(type= t placeholder= placeholder name= name)&attributes(attributes)
-	+e.input-wrap.form-group
+	+e.input-wrap.form-group(class=parentMod)
 		if label
 			label
 				+e.SPAN.title= label

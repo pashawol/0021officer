@@ -265,6 +265,131 @@ function eventHandler() {
 
 	});
 
+
+	//my custom code
+	function CustomTabs2(selectorsArr) {
+		for (let selector of selectorsArr) {
+			let tabPills = document.querySelectorAll('[data-tab-pill="' + selector + '"]');
+			let tabContent = document.querySelectorAll('[data-tab-content="' + selector + '"]');
+			if (tabPills != [] && tabContent != []) {
+				for (let tab of tabPills) {
+					tab.addEventListener('click', function () {
+						let thisTab;
+						for (let tab of tabPills) {
+							tab.classList.remove('active');
+						}
+						for (let contItem of tabContent) {
+							contItem.classList.remove('active');
+							if (contItem.getAttribute('data-tab-for') === this.getAttribute('data-tab-for')) {
+								thisTab = contItem;
+							}
+						}
+						this.classList.add('active');
+						thisTab.classList.add('active');
+					});
+				}
+			}
+		}
+	}
+	//CustomTabs2(['props', 'user-acc', 'change-data-forms', 'catalog-goods-display', 'foto-gallery', 'prod-descr-tabs']);
+
+
+	//top-nav js
+	let closeOnMissClick;
+	function toggleDropDownItem(targetSlideToggle) {
+		document.body.removeEventListener('click', closeOnMissClick);
+
+		this.classList.toggle('collapsed');
+		$(targetSlideToggle).slideToggle(function () { //
+			this.classList.toggle('visiable');
+		});
+		event.stopPropagation();
+		if (this.classList.contains('collapsed')){
+			closeOnMissClick = closeTopNav.bind(undefined, targetSlideToggle, this);
+			document.body.addEventListener('click', closeOnMissClick);
+		}
+		else{
+			window.addEventListener('resize', removeInlineStyle, {passive: true});
+		}
+	}
+	function closeTopNav(closestParent, toggleBtn) {
+		if (!event.target.closest(closestParent) && window.matchMedia("(max-width: 768px)").matches){
+			$(toggleBtn).click();
+			document.body.removeEventListener('click', closeOnMissClick);
+		}
+	}
+	function customTabsToggle(slidesArr){
+		for (let [index, tab] of Object.entries(slidesArr)){
+			$(tab['toggleBtn']).click(function () {
+
+				for (let [Subindex, tab] of Object.entries(slidesArr)){
+					if (index !== Subindex){
+						$(tab['toggleBtn']).removeClass('collapsed');
+						$(tab['toggleTarget']).slideUp(function () {
+							this.classList.remove('visiable');
+						});
+					}
+				}
+
+				toggleDropDownItem.call(this, tab['toggleTarget']);
+			});
+
+		}
+	}
+	let customTabsArr = [
+		{
+			toggleBtn : '.top-nav__burger-cont',
+			toggleTarget: '.top-nav__inline-catalog-block',
+		},
+		{
+			toggleBtn : '.top-nav__mobile-search-icon-cont',
+			toggleTarget: '.top-nav__search-col',
+		},
+	];
+	customTabsToggle(customTabsArr);
+	//tiny fix
+	function removeInlineStyle() {
+		if (window.matchMedia("(min-width: 768px)").matches){
+			for (let tab of customTabsArr){
+				document.querySelector(tab['toggleTarget']).style = '';
+			}
+			window.removeEventListener('resize', removeInlineStyle, {passive: true});
+		}
+	}
+	// sCatalog
+
+	const clotherSlider = new Swiper('.clother-slider', {
+		slidesPerView: 1,
+
+		lazy: {
+			loadPrevNext: true,
+		},
+
+		//pagination
+		pagination: {
+			el: $(this).find('.clother-slider-pugin'),
+			clickable: true,
+		},
+		//...defaultSl,
+		//slidesPerView: 'auto',
+		//watchOverflow: true,
+		//spaceBetween: 0,
+		//freeMode: true,
+		//watchOverflow: true,
+		//slidesPerGroup: 3,
+
+		// centeredSlides: true,
+		//loop: true,
+		//loopFillGroupWithBlank: true,
+		//touchRatio: 0.2,
+		//slideToClickedSlide: true,
+		//freeModeMomentum: true,
+		//navigation: {
+		//	nextEl: '.swiper-button-next',
+		//	prevEl: '.swiper-button-prev',
+		//},
+	});
+	//
 		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 		if (isIE11) {
 			$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)

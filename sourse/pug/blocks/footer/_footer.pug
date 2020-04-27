@@ -1,4 +1,22 @@
 mixin footer()
 	+b.FOOTER.footer.block-with-lazy
 		.container
-			h2 footer
+			+e.f-menu-strip.row
+				+e.logo-col.col.col-auto.order-1.order-xl-0
+					a(href="#")
+						img(src="img/@2x/logo.png" alt='')
+				+e.menu-col.col.order-0.order-xl-1.d-none.d-md-block
+					+footerMnu()
+				+e.contact-col.col.col-auto.order-2.order-xl-2
+					a.phone-num(href="tel:7-916-907-18-73") +7-916-907-18-73
+					a.order-call(href="#") Зaказать звонок
+			+e.email-subscribe
+				+form-wrap()
+					+e.email-subsribe-txt Будьте вкурсе всех новых поступлений Выгодных предложений и последних новостей
+					+input('Ваш e-mail', 'email')
+					+e.BUTTON.subscribe-btn.btn.btn-pr Подписаться
+			+e.all-rights-reserved
+				+e.SPAN.all-rights-txt © Все права защищены. Информация сайта защищена законом об авторских правах.
+				+e.A.inner-link(href='#') Политика конфиденциальности
+				+e.A.inner-link(href='#') Пользовательское соглашение
+

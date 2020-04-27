@@ -1,0 +1,86 @@
+mixin sCatalog()
+	// start sCatalog
+	+b.sCatalog.section#sCatalog&attributes(attributes)
+		.container
+			.swiper-container.clother-slider
+				.swiper-wrapper
+					.swiper-slide
+						+clotherSlide('img/@2x/index-slider-bg.jpg')
+					.swiper-slide
+						+clotherSlide('img/@2x/index-slider-bg.jpg')
+					.swiper-slide
+						+clotherSlide('img/@2x/index-slider-bg.jpg')
+				.clother-slider-pugin.d-none.d-md-block
+			.h2.catalog-txt Каталог
+			.row
+				- let categoryItemsList = ['Костюмы', 'Куртки', 'Брюки', 'Жилеты, разгрузки', 'Головные уборы', 'Фурнитура', 'Шевроны, погоны', 'Трикотаж', 'Рубашки', 'Рюкзаки, сумки', 'Свитера, толстовки', 'Обувь'];
+				- for(var i = 1; i < 13; i++) {
+					+categoryItem(i, categoryItemsList[i-1])
+				- }
+			+b.officer-pride-bl
+				+e.officer-pride-txt.h2
+					span.text-pr= "Офицер Честь имею! "
+					| Отечественное производство форменной оджеды
+				+e.txt-row
+					+e.left-col
+						p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при прДавно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при пр
+					+e.right-col
+						p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при
+				+e.green-pills-bl.row
+					.col-6.col-md-3
+						+e.green-pill-cont
+							+e.IMG.green-pill-img(src='img/@2x/big-green-sew-mach.png' alt="")
+							+e.green-pill-txt
+								|Собственное
+								br
+								|производство
+					.col-6.col-md-3
+						+e.green-pill-cont
+							+e.green-pill-img
+								img(src='img/@2x/big-green-discount.png' alt="")
+							+e.green-pill-txt
+								|Оптовые цены
+								br
+								|в рознице
+					.col-6.col-md-3
+						+e.green-pill-cont
+							+e.IMG.green-pill-img(src='img/@2x/big-green-soldier.png' alt="")
+							+e.green-pill-txt
+								|Индивидуальные
+								br
+								|пошивы в любых количествах
+					.col-6.col-md-3
+						+e.green-pill-cont
+							+e.IMG.green-pill-img(src='img/@2x/big-green-delivery.png' alt="")
+							+e.green-pill-txt
+								|Доставка в любую точку
+								br
+								|Российской Федерации
+	// end sCatalog
+
+mixin categoryItem(imgNum, categoryTxt)
+	.col-6.col-md-4.col-lg-3
+		+b.category-item
+			+e.category-link(href="#")
+				+e.category-img-cont
+					+e.IMG.category-img(src=`img/@2x/category-img${imgNum}.png` alt='')
+				+e.SPAN.category-txt=categoryTxt
+
+mixin clotherSlide(bgImg)
+	+b.clother-slide
+		+e.IMG.background-img.swiper-lazy(src="#" data-src=bgImg alt="")
+		+e.slide-content
+			+e.dash-cont
+				+e.slide-title
+					|Форменная одежда,
+					|обувь, снаряжение
+				+e.img-txt-pills-container
+					+e.img-txt-pill
+						img.pill-img(src='img/@2x/small-white-sew-mach.png' alt='')
+						span.pill-txt Собственное производство
+					+e.img-txt-pill
+						img.pill-img(src="img/@2x/small-white-delivery.png" alt='')
+						span.pill-txt Пошив в любых количествах
+				+e.learn-more-btn.btn.btn-pr(href="#") Подробнее
+		+e.slide-img-cont.d-none.d-lg-block
+			img.slide-img.swiper-lazy(src='#' data-src="img/@2x/slider-img.png" alt="")

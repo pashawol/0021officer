@@ -1,7 +1,64 @@
 
 	// start .topLine
 	.topLine {
-		 
+		 border-bottom: 1px solid rgba(black, .1);
+
+		.location-bl{
+			//background-color: red;
+			//padding-left: 0;
+			line-height: rem(42px);
+
+			margin-left: auto;
+			//order: 0;
+			@include media-breakpoint-up(md){
+				margin-left: 0;
+				//order: 0;
+			}
+
+			.icon{
+				position: relative;
+				top: rem(-2px);
+				font-size: rem(12px);
+				color: $danger;
+				margin-right: rem(10px);
+			}
+			span{
+				color: $primary;
+				font-size: rem(14px);
+				line-height: rem(42px);
+			}
+		}
+		//main menu
+		.main-menu{
+			margin-left: auto;
+			//padding-right: 0;
+			ul{
+				list-style: none;
+				display: flex;
+				margin: 0;
+				li{
+					padding-right: rem(25px);
+					a{
+						text-decoration: none;
+						color: $black;
+						font-size: rem(14px);
+						line-height: rem(42px);
+						display: block;
+						@include mt();
+						&:hover{
+							color: $primary;
+						}
+					}
+				}
+				li:last-child{
+					padding-right: 0;
+				}
+			}
+		}
+
+
+
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

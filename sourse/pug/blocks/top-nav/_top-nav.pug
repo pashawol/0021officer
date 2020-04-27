@@ -8,13 +8,14 @@ mixin mob-mnu()
 		//- request.responseType = 'json';
 		//- let dataJson = JSON.parse(json);
 	//- h1= dataJson['lala'] 
-	+b.toggle-menu-mobile--js.d-lg-none
+	+b.toggle-menu-mobile--js.d-md-none
 		span
 	+b.menu-mobile--js.d-lg-none
 		+b.toggle-menu-mobile--js
 			span
 		+e.inner
-		
+			+e.inner-logo(href="#")
+				img(src="img/@2x/logo.png" alt="")
 			+mnu()
 			.text-right
 	//  мобильное меню
@@ -22,6 +23,49 @@ mixin top-nav()
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		.container
-			+mnu()
-					
+			.row.position-relative
+				+e.logo-col.col.col-auto
+					a(href="#")
+						img(src="img/@2x/logo.png" alt="")
+				+e.search-col.col
+					+form-wrap()
+						+input('Искать в каталоге и материалах...', 'text', undefined, 'search-inp', 'search-inp-wrap')
+							+e.BUTTON.scope-btn
+								+icon('scope')
+							+e.tags-list
+								+e.tag-link(href="#") Куртки
+								+e.tag-link(href="#") Штаны
+								+e.tag-link(href="#") Разгрузки
+				+e.contact-col.col.col-auto
+					.phone-block
+						+icon('phone')
+						a.phone-num(href="tel:7-916-907-18-73") +7-916-907-18-73
+					a.mail-link(href="mailto:sample@samplemail.org") sample@samplemail.org
+				+e.inline-catalog-block.col-12
+					+inlineCatalogContent()
+				+e.mobile-category-search-strip.d-block.d-md-none.col-12
+					.row
+						.col
+							+e.burger-cont
+								span
+							+e.SPAN.catalog-txt Каталог товаров
+						+e.mobile-search-icon-cont.col-auto
+							+icon('cross')
+							+icon('scope')
+
 	// end top-nav
+
+mixin inlineCatalogContent()
+	+e.A.inline-catalog-link(href="#") КОСТЮМЫ
+	+e.A.inline-catalog-link(href="#") КУРТКИ
+	+e.A.inline-catalog-link(href="#") БРЮКИ
+	+e.A.inline-catalog-link(href="#") ЖИЛЕТЫ РАЗГРУЗКИ
+	+e.A.inline-catalog-link(href="#") ГОЛОВНЫЕ УБОРЫ
+	+e.A.inline-catalog-link(href="#") ФУРНИТУРА
+	+e.A.inline-catalog-link(href="#") ШЕВРОНЫ ПОГОНЫ
+	+e.A.inline-catalog-link(href="#") ТРИКОТАЖ
+	+e.A.inline-catalog-link(href="#") РУБАШКИ
+	+e.A.inline-catalog-link(href="#") РЮКЗАКИ СУМКИ
+	+e.A.inline-catalog-link(href="#") ОБУВЬ
+	+e.A.inline-catalog-link(href="#") СВИТЕРА ТОЛСТОВКИ
+	+e.A.inline-catalog-link(href="#") АКСЕССУАРЫ

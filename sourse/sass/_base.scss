@@ -14,13 +14,18 @@ html {
 	height: 100%;
 	background-position: center 0;
 	opacity: 0;
-	// opacity: 0.7;
+	//opacity: 0.7;
 }
 
 body,
 html {
-	font-size: $em-base;
-	// @include font-size(1rem);
+	font-size: 13px;
+	@include media-breakpoint-up(sm){
+		font-size: 14px;
+	}
+	@include media-breakpoint-up(xl){
+		font-size: $em-base;
+	}
 }
 
 
@@ -389,4 +394,16 @@ img.img-bg,
 
 iframe {
 	border: none;
+}
+
+.h2{
+	line-height: 1.5;
+	font-weight: bold;
+	font-size: $h2-font-size;
+}
+
+.h4{
+	line-height: 1.5;
+	font-weight: bold;
+	font-size: $h4-font-size;
 }
