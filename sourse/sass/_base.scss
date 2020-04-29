@@ -492,3 +492,40 @@ iframe {
 	}
 }
 
+//pugin
+.pagination-wrapper{
+	ul{
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin-right: rem(15px);
+			a.page-numbers{
+				border-radius: rem(5) !important;
+				padding: 0 rem(12);
+				font-weight: bold;
+				font-size: rem(12px);
+				line-height: rem(32);
+				color: $deep-dark;
+				border: none;
+				background-color: $deep-gray-pugin;
+			}
+			&.three-dots{
+				a.page-numbers{
+					border: none;
+					background-color: transparent;
+					box-shadow: none;
+					pointer-events: none;
+					outline: none !important;
+					text-decoration: none;
+				}
+			}
+			&.active{
+				a.page-numbers{
+					background-color: $danger;
+					color: white;
+				}
+			}
+		}
+	}
+}

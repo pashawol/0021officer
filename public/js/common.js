@@ -322,9 +322,113 @@ function eventHandler() {
 		} finally {
 			_iterator.f();
 		}
-	} //CustomTabs2(['props', 'user-acc', 'change-data-forms', 'catalog-goods-display', 'foto-gallery', 'prod-descr-tabs']);
-	//top-nav js
+	}
 
+	function CustomTabsScoped(tabGroupArr) {
+		var _iterator5 = _createForOfIteratorHelper(tabGroupArr),
+				_step5;
+
+		try {
+			for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+				var tabGroupItem = _step5.value;
+				var scopeNode = void 0;
+				var selector = void 0;
+
+				if (typeof tabGroupItem === 'string') {
+					scopeNode = [document];
+					selector = tabGroupItem;
+				} else {
+					scopeNode = document.querySelectorAll(tabGroupItem.scopeElementSelect);
+					selector = tabGroupItem.tabGroup;
+					if (!scopeNode) return;
+				}
+
+				var _iterator6 = _createForOfIteratorHelper(scopeNode),
+						_step6;
+
+				try {
+					var _loop2 = function _loop2() {
+						var node = _step6.value;
+						var tabPills = node.querySelectorAll('[data-tab-pill="' + selector + '"]');
+						var tabContent = node.querySelectorAll('[data-tab-content="' + selector + '"]');
+
+						if (tabPills != [] && tabContent != []) {
+							var _iterator7 = _createForOfIteratorHelper(tabPills),
+									_step7;
+
+							try {
+								for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
+									var tab = _step7.value;
+									tab.addEventListener('click', function () {
+										var thisTab;
+
+										var _iterator8 = _createForOfIteratorHelper(tabPills),
+												_step8;
+
+										try {
+											for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
+												var _tab2 = _step8.value;
+
+												_tab2.classList.remove('active');
+											}
+										} catch (err) {
+											_iterator8.e(err);
+										} finally {
+											_iterator8.f();
+										}
+
+										var _iterator9 = _createForOfIteratorHelper(tabContent),
+												_step9;
+
+										try {
+											for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
+												var contItem = _step9.value;
+												contItem.classList.remove('active');
+
+												if (contItem.getAttribute('data-tab-for') === this.getAttribute('data-tab-for')) {
+													thisTab = contItem;
+												}
+											}
+										} catch (err) {
+											_iterator9.e(err);
+										} finally {
+											_iterator9.f();
+										}
+
+										this.classList.add('active');
+										thisTab.classList.add('active');
+									});
+								}
+							} catch (err) {
+								_iterator7.e(err);
+							} finally {
+								_iterator7.f();
+							}
+						}
+					};
+
+					for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
+						_loop2();
+					}
+				} catch (err) {
+					_iterator6.e(err);
+				} finally {
+					_iterator6.f();
+				}
+			}
+		} catch (err) {
+			_iterator5.e(err);
+		} finally {
+			_iterator5.f();
+		}
+	} //product
+	//let generatedMassiveOfEls = getAllElemsID();
+
+
+	CustomTabsScoped([{
+		tabGroup: 'product-colors-var',
+		scopeElementSelect: '.square-card-item'
+	}]); //top-nav js
 
 	var closeOnMissClick;
 
@@ -355,7 +459,7 @@ function eventHandler() {
 	}
 
 	function customTabsToggle(slidesArr) {
-		var _loop2 = function _loop2() {
+		var _loop3 = function _loop3() {
 			var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
 					index = _Object$entries$_i[0],
 					tab = _Object$entries$_i[1];
@@ -364,11 +468,11 @@ function eventHandler() {
 				for (var _i2 = 0, _Object$entries2 = Object.entries(slidesArr); _i2 < _Object$entries2.length; _i2++) {
 					var _Object$entries2$_i = _slicedToArray(_Object$entries2[_i2], 2),
 							Subindex = _Object$entries2$_i[0],
-							_tab2 = _Object$entries2$_i[1];
+							_tab3 = _Object$entries2$_i[1];
 
 					if (index !== Subindex) {
-						$(_tab2['toggleBtn']).removeClass('collapsed');
-						$(_tab2['toggleTarget']).slideUp(function () {
+						$(_tab3['toggleBtn']).removeClass('collapsed');
+						$(_tab3['toggleTarget']).slideUp(function () {
 							this.classList.remove('visiable');
 						});
 					}
@@ -379,7 +483,7 @@ function eventHandler() {
 		};
 
 		for (var _i = 0, _Object$entries = Object.entries(slidesArr); _i < _Object$entries.length; _i++) {
-			_loop2();
+			_loop3();
 		}
 	}
 
@@ -394,18 +498,18 @@ function eventHandler() {
 
 	function removeInlineStyle() {
 		if (window.matchMedia("(min-width: 768px)").matches) {
-			var _iterator5 = _createForOfIteratorHelper(customTabsArr),
-					_step5;
+			var _iterator10 = _createForOfIteratorHelper(customTabsArr),
+					_step10;
 
 			try {
-				for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-					var tab = _step5.value;
+				for (_iterator10.s(); !(_step10 = _iterator10.n()).done;) {
+					var tab = _step10.value;
 					document.querySelector(tab['toggleTarget']).style = '';
 				}
 			} catch (err) {
-				_iterator5.e(err);
+				_iterator10.e(err);
 			} finally {
-				_iterator5.f();
+				_iterator10.f();
 			}
 
 			window.removeEventListener('resize', removeInlineStyle, {

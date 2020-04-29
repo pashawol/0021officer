@@ -17,15 +17,72 @@ mixin sCategory()
 							option По наименованию2
 							option По наименованию3
 					+e.show-for
-						.show-for-cont
-							span.show-for-txt Показывать по:
-							.show-for-btn-box
-								button.show-for-btn 12
-								button.show-for-btn.active 24
-								button.show-for-btn 48
+						+showFor()
 				+e.vue-btns-box-col.d-none.d-sm-block
 					+e.BUTTON.vue-btn.vue-btn-square.active
 						+icon("vue-btn-square")
 					+e.BUTTON.vue-btn.vue-btn-table
 						+icon("vue-btn-table")
+			.square-items-bl.row
+				+squareItem('1')
+				+squareItem('2')
+				+squareItem('3')
+				+squareItem('4')
+
+				+squareItem('1')
+				+squareItem('2')
+				+squareItem('3')
+				+squareItem('4')
+
+				+squareItem('1')
+				+squareItem('2')
+				+squareItem('3')
+				+squareItem('4')
+			.row.justify-content-between
+				.col-auto
+					+showFor()
+				.col-auto
+					+pugin1()
 	// end sCategory
+
+mixin showFor()
+	.show-for-cont
+		span.show-for-txt Показывать по:
+		.show-for-btn-box
+			button.show-for-btn 12
+			button.show-for-btn.active 24
+			button.show-for-btn 48
+
+mixin squareItem(imgNum)
+	.col-12.col-sm-6.col-md-4.col-lg-3
+		+b.square-card-item
+			+e.A.like-btn(href="#")
+				+icon('like')
+			+e.SPAN.articul-txt арт: 112056-55
+			+e.img-block(href="#")
+				img.product-img(src="img/@2x/car.png" alt="")(data-tab-for='1' data-tab-content='product-colors-var')
+				img.product-img(src="img/@2x/car.png" alt="")(data-tab-for='2' data-tab-content='product-colors-var')
+				img.product-img(src="img/@2x/car.png" alt="")(data-tab-for='3' data-tab-content='product-colors-var')
+				img.product-img.active(src=`img/@2x/armor${imgNum}.jpg` alt="")(data-tab-for='4' data-tab-content='product-colors-var')
+				img.product-img(src="img/@2x/car.png" alt="")(data-tab-for='5' data-tab-content='product-colors-var')
+				img.product-img(src="img/@2x/car.png" alt="")(data-tab-for='6' data-tab-content='product-colors-var')
+			+e.item-name(href="#") Разгрузочная система "Стрелок"(6ш112) олива.
+			+e.price-bl 3 300 руб.
+			+e.color-choise-bl
+				+e.color-choise-item(data-tab-for='1'  data-tab-pill='product-colors-var')
+					+e.IMG.color-choise-img(src="img/@2x/armor-texture1.png" alt="")
+
+				+e.color-choise-item(data-tab-for='2'  data-tab-pill='product-colors-var')
+					+e.IMG.color-choise-img(src="img/@2x/armor-texture2.png" alt="")
+
+				+e.color-choise-item(data-tab-for='3'  data-tab-pill='product-colors-var')
+					+e.IMG.color-choise-img(src="img/@2x/armor-texture3.png" alt="")
+
+				+e.color-choise-item.active(data-tab-for='4'  data-tab-pill='product-colors-var')
+					+e.IMG.color-choise-img(src="img/@2x/armor-texture4.png" alt="")
+
+				+e.color-choise-item(data-tab-for='5'  data-tab-pill='product-colors-var')
+					+e.IMG.color-choise-img(src="img/@2x/armor-texture5.png" alt="")
+
+				+e.color-choise-item(data-tab-for='6'  data-tab-pill='product-colors-var')
+					+e.IMG.color-choise-img(src="img/@2x/armor-texture6.png" alt="")

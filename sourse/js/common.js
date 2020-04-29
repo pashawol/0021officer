@@ -291,7 +291,53 @@ function eventHandler() {
 			}
 		}
 	}
-	//CustomTabs2(['props', 'user-acc', 'change-data-forms', 'catalog-goods-display', 'foto-gallery', 'prod-descr-tabs']);
+
+	function CustomTabsScoped(tabGroupArr) {
+		for (let tabGroupItem of tabGroupArr) {
+			let scopeNode;
+			let selector;
+			if (typeof tabGroupItem === 'string'){
+				scopeNode = [document];
+				selector = tabGroupItem;
+			}
+			else{
+				scopeNode = document.querySelectorAll(tabGroupItem.scopeElementSelect);
+				selector = tabGroupItem.tabGroup;
+				if (!scopeNode) return
+			}
+			for (let node of scopeNode){
+				let tabPills = node.querySelectorAll('[data-tab-pill="' + selector + '"]');
+				let tabContent = node.querySelectorAll('[data-tab-content="' + selector + '"]');
+				if (tabPills != [] && tabContent != []) {
+					for (let tab of tabPills) {
+						tab.addEventListener('click', function () {
+							let thisTab;
+							for (let tab of tabPills) {
+								tab.classList.remove('active');
+							}
+							for (let contItem of tabContent) {
+								contItem.classList.remove('active');
+								if (contItem.getAttribute('data-tab-for') === this.getAttribute('data-tab-for')) {
+									thisTab = contItem;
+								}
+							}
+							this.classList.add('active');
+							thisTab.classList.add('active');
+						});
+					}
+				}
+			}
+		}
+	}
+	//product
+	//let generatedMassiveOfEls = getAllElemsID();
+
+	CustomTabsScoped([
+		{
+			tabGroup: 'product-colors-var',
+			scopeElementSelect: '.square-card-item'
+		},
+	]);
 
 
 	//top-nav js
