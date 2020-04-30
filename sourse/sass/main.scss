@@ -42,7 +42,6 @@ $output-bourbon-deprecation-warnings: false;
   .active {
     a {
       color: $breadcrumb-active-color;
-      pointer-events: none;
     }
   }
 }

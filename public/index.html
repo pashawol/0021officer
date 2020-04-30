@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+
+<!--mixin breadcrumb(...items)
+nav(aria-label="breadcrumb" )
+	ol.breadcrumb(itemscope itemtype="http://schema.org/BreadcrumbList")
+		-for (var i = 0; i < items.length; i++)
+			li.breadcrumb-item( class=(i == items.length - 1 ? "active" : '')   itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
+				a(href=(i == 0 ? "/" : '#') itemprop="item" )
+					span( itemprop="name")= items[i]
+					meta(itemprop="position" content= (i + 1) )
+
+--><!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -70,7 +80,7 @@
 				<div class="top-nav block-with-lazy">
 					<div class="container">
 						<div class="row position-relative">
-							<div class="top-nav__logo-col col col-auto"><a href="#"><img src="img/@2x/logo.png" alt=""/></a>
+							<div class="top-nav__logo-col col col-auto"><a href="/"><img src="img/@2x/logo.png" alt=""/></a>
 							</div>
 							<div class="top-nav__search-col col">
 								<div class="form-wrap">
@@ -102,32 +112,19 @@
 							</div>
 							<div class="top-nav__inline-catalog-block col-12">
 								<ul class="menu">
-									<li class="menu-item"><a class="top-nav__inline-catalog-link" href="#">КОСТЮМЫ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">КУРТКИ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">БРЮКИ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">ЖИЛЕТЫ РАЗГРУЗКИ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">ГОЛОВНЫЕ УБОРЫ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">ФУРНИТУРА</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">ШЕВРОНЫ ПОГОНЫ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">ТРИКОТАЖ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">РУБАШКИ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">РЮКЗАКИ СУМКИ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">ОБУВЬ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">СВИТЕРА ТОЛСТОВКИ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">АКСЕССУАРЫ</a>
-									</li>
+									<li class="menu-item"><a href="#">КОСТЮМЫ</a></li>
+									<li><a href="#">КУРТКИ</a></li>
+									<li><a href="#">БРЮКИ</a></li>
+									<li><a href="#">ЖИЛЕТЫ РАЗГРУЗКИ</a></li>
+									<li><a href="#">ГОЛОВНЫЕ УБОРЫ</a></li>
+									<li><a href="#">ФУРНИТУРА</a></li>
+									<li><a href="#">ШЕВРОНЫ ПОГОНЫ</a></li>
+									<li><a href="#">ТРИКОТАЖ</a></li>
+									<li><a href="#">РУБАШКИ</a></li>
+									<li><a href="#">РЮКЗАКИ СУМКИ</a></li>
+									<li><a href="#">ОБУВЬ</a></li>
+									<li><a href="#">СВИТЕРА ТОЛСТОВКИ</a></li>
+									<li><a href="#">АКСЕССУАРЫ</a></li>
 								</ul>
 							</div>
 							<div class="top-nav__mobile-category-search-strip d-block d-md-none col-12">
@@ -160,18 +157,16 @@
 							<div class="swiper-slide">
 								<div class="clother-slide"><img class="clother-slide__background-img swiper-lazy" src="#" data-src="img/@2x/index-slider-bg.jpg" alt="" role="presentation"/>
 									<div class="clother-slide__slide-content">
-										<div class="clother-slide__dash-cont">
-											<div class="clother-slide__slide-title">
-												Форменная одежда,
-												обувь, снаряжение
-											</div>
-											<div class="clother-slide__img-txt-pills-container">
-												<div class="clother-slide__img-txt-pill"><img class="pill-img" src="img/small-white-sew-mach.svg" alt=""/><span class="pill-txt">Собственное производство</span>
-												</div>
-												<div class="clother-slide__img-txt-pill"><img class="pill-img" src="img/small-white-delivery.svg" alt=""/><span class="pill-txt">Пошив в любых количествах</span>
-												</div>
-											</div><a class="clother-slide__learn-more-btn btn btn-pr" href="#">Подробнее</a>
+										<div class="clother-slide__slide-title">
+											Форменная одежда,
+											обувь, снаряжение
 										</div>
+										<div class="clother-slide__img-txt-pills-container">
+											<div class="clother-slide__img-txt-pill"><img class="pill-img" src="img/small-white-sew-mach.svg" alt=""/><span class="pill-txt">Собственное производство</span>
+											</div>
+											<div class="clother-slide__img-txt-pill"><img class="pill-img" src="img/small-white-delivery.svg" alt=""/><span class="pill-txt">Пошив в любых количествах</span>
+											</div>
+										</div><a class="clother-slide__learn-more-btn btn btn-pr" href="#">Подробнее</a>
 									</div>
 									<div class="clother-slide__slide-img-cont d-none d-lg-block"><img class="slide-img swiper-lazy" src="#" data-src="img/@2x/slider-img.png" alt=""/>
 									</div>
@@ -180,18 +175,16 @@
 							<div class="swiper-slide">
 								<div class="clother-slide"><img class="clother-slide__background-img swiper-lazy" src="#" data-src="img/@2x/index-slider-bg.jpg" alt="" role="presentation"/>
 									<div class="clother-slide__slide-content">
-										<div class="clother-slide__dash-cont">
-											<div class="clother-slide__slide-title">
-												Форменная одежда,
-												обувь, снаряжение
-											</div>
-											<div class="clother-slide__img-txt-pills-container">
-												<div class="clother-slide__img-txt-pill"><img class="pill-img" src="img/small-white-sew-mach.svg" alt=""/><span class="pill-txt">Собственное производство</span>
-												</div>
-												<div class="clother-slide__img-txt-pill"><img class="pill-img" src="img/small-white-delivery.svg" alt=""/><span class="pill-txt">Пошив в любых количествах</span>
-												</div>
-											</div><a class="clother-slide__learn-more-btn btn btn-pr" href="#">Подробнее</a>
+										<div class="clother-slide__slide-title">
+											Форменная одежда,
+											обувь, снаряжение
 										</div>
+										<div class="clother-slide__img-txt-pills-container">
+											<div class="clother-slide__img-txt-pill"><img class="pill-img" src="img/small-white-sew-mach.svg" alt=""/><span class="pill-txt">Собственное производство</span>
+											</div>
+											<div class="clother-slide__img-txt-pill"><img class="pill-img" src="img/small-white-delivery.svg" alt=""/><span class="pill-txt">Пошив в любых количествах</span>
+											</div>
+										</div><a class="clother-slide__learn-more-btn btn btn-pr" href="#">Подробнее</a>
 									</div>
 									<div class="clother-slide__slide-img-cont d-none d-lg-block"><img class="slide-img swiper-lazy" src="#" data-src="img/@2x/slider-img.png" alt=""/>
 									</div>
@@ -200,18 +193,16 @@
 							<div class="swiper-slide">
 								<div class="clother-slide"><img class="clother-slide__background-img swiper-lazy" src="#" data-src="img/@2x/index-slider-bg.jpg" alt="" role="presentation"/>
 									<div class="clother-slide__slide-content">
-										<div class="clother-slide__dash-cont">
-											<div class="clother-slide__slide-title">
-												Форменная одежда,
-												обувь, снаряжение
-											</div>
-											<div class="clother-slide__img-txt-pills-container">
-												<div class="clother-slide__img-txt-pill"><img class="pill-img" src="img/small-white-sew-mach.svg" alt=""/><span class="pill-txt">Собственное производство</span>
-												</div>
-												<div class="clother-slide__img-txt-pill"><img class="pill-img" src="img/small-white-delivery.svg" alt=""/><span class="pill-txt">Пошив в любых количествах</span>
-												</div>
-											</div><a class="clother-slide__learn-more-btn btn btn-pr" href="#">Подробнее</a>
+										<div class="clother-slide__slide-title">
+											Форменная одежда,
+											обувь, снаряжение
 										</div>
+										<div class="clother-slide__img-txt-pills-container">
+											<div class="clother-slide__img-txt-pill"><img class="pill-img" src="img/small-white-sew-mach.svg" alt=""/><span class="pill-txt">Собственное производство</span>
+											</div>
+											<div class="clother-slide__img-txt-pill"><img class="pill-img" src="img/small-white-delivery.svg" alt=""/><span class="pill-txt">Пошив в любых количествах</span>
+											</div>
+										</div><a class="clother-slide__learn-more-btn btn btn-pr" href="#">Подробнее</a>
 									</div>
 									<div class="clother-slide__slide-img-cont d-none d-lg-block"><img class="slide-img swiper-lazy" src="#" data-src="img/@2x/slider-img.png" alt=""/>
 									</div>
@@ -221,7 +212,7 @@
 						<div class="clother-slider-pugin d-none d-md-block"></div>
 					</div>
 					<div class="h2 catalog-txt">Каталог</div>
-					<div class="row">
+					<div class="row roww-40-20">
 						<div class="col-6 col-md-4 col-lg-3">
 							<div class="category-item"><a class="category-item__category-link" href="#"><span class="category-item__category-img-cont"><img class="category-item__category-img" src="img/@2x/category-img1.png" alt="" role="presentation"/></span><span class="category-item__category-txt">Костюмы</span></a>
 							</div>
@@ -278,13 +269,12 @@
 			<div class="sOfficerPride section" id="sOfficerPride">
 				<div class="container">
 					<div class="officer-pride-bl">
-						<div class="officer-pride-bl__officer-pride-txt h2"><span class="text-pr">Офицер Честь имею! </span>Отечественное производство форменной оджеды
-						</div>
+						<h2><span style="color: #457c3a;">Офицер Честь имею!</span> Отечественное производство форменной оджеды</h2>
 						<div class="officer-pride-bl__txt-row row">
-							<div class="officer-pride-bl__left-col col-12 col-lg-7">
+							<div class="officer-pride-bl__left-col col-lg-8">
 								<p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при прДавно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при пр</p>
 							</div>
-							<div class="officer-pride-bl__right-col col-12 col-lg-4 offset-0 offset-lg-1">
+							<div class="officer-pride-bl__right-col col">
 								<p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при</p>
 							</div>
 						</div>
@@ -323,9 +313,7 @@
 			<!-- start seoSection-->
 			<section class="seoSection section" id="seoSection">
 				<div class="container">
-					<div class="section-title">
-						<h2 class="h2">Полезные материалы</h2>
-					</div>
+					<h2>Полезные материалы</h2>
 					<div class="news-box">
 						<div class="row">
 							<div class="col-12 col-sm-6 col-lg-3">
@@ -368,7 +356,7 @@
 			<footer class="footer block-with-lazy">
 				<div class="container">
 					<div class="footer__f-menu-strip row">
-						<div class="footer__logo-col col col-auto order-1 order-xl-0"><a href="#"><img src="img/@2x/logo.png" alt=""/></a>
+						<div class="footer__logo-col col col-auto order-1 order-xl-0"><a href="/"><img src="img/@2x/logo.png" alt=""/></a>
 						</div>
 						<div class="footer__menu-col col order-0 order-xl-1 d-none d-md-block">
 							<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">

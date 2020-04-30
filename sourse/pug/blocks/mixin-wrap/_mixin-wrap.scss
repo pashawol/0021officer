@@ -36,15 +36,19 @@
 
 //breadcrumbs
 
-.breadcrumb{
-	background-color: transparent;
-	padding-left: 0;
-	margin-bottom: 0;
-	.breadcrumb-item{
-		font-size: rem(12);
+.breadcrumb-slider-js-prod-card03{
+	padding-bottom: rem(15);
+
+	.breadcrumb {
+		background-color: transparent;
+		display: flex;
+		flex-wrap: nowrap;
+		padding: 0 0 0 0;
+	}
+
+	.breadcrumb-item {
+		width: auto;
 		padding-right: 30px;
-		padding-left: 0;
-		position: relative;
 		&:before, &:after{
 			padding: 0;
 			content: "";
@@ -65,6 +69,20 @@
 		&:last-child{
 			&:before, &:after{
 				display: none;
+			}
+		}
+
+		a {
+			line-height: rem(25px);
+			font-size: rem(12px);
+			//padding-right: rem(10px);
+			color: $primary;
+		}
+
+		&.active {
+			a {
+				color: rgba($black, .5);
+				pointer-events: none;
 			}
 		}
 	}

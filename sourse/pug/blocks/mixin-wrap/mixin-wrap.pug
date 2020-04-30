@@ -12,7 +12,7 @@ mixin icon(name,mod)
 
 
 //- breadcrumb
-mixin breadcrumb(...items)
+//mixin breadcrumb(...items)
 	nav(aria-label="breadcrumb" )
 		ol.breadcrumb(itemscope itemtype="http://schema.org/BreadcrumbList")
 			-for (var i = 0; i < items.length; i++)
@@ -20,6 +20,15 @@ mixin breadcrumb(...items)
 					a(href=(i == 0 ? "/" : '#') itemprop="item" )
 						span( itemprop="name")= items[i]
 						meta(itemprop="position" content= (i + 1) )
+
+mixin breadcrumb(...items)
+	nav(aria-label="breadcrumb" ).breadcrumb-slider-js-prod-card03.swiper-container
+		ol.breadcrumb.swiper-wrapper(itemscope itemtype="http://schema.org/BreadcrumbList")
+			-for (var i = 0; i < items.length; i++)
+					li.breadcrumb-item.swiper-slide( class=(i == items.length-1 ? "active" : '')   itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
+						a(href=(i == 0 ? "/" : '#') itemprop="item" )
+							span( itemprop="name")= items[i]
+							meta(itemprop="position" content= (i + 1) )
 
 
 		

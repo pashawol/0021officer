@@ -30,7 +30,7 @@
 } // end.sOfficerPride
 
 .officer-pride-bl{
-	&__officer-pride-txt{
+	h2 {
 		line-height: 1.2;
 		@include media-breakpoint-up(lg){
 			max-width: 78%;
@@ -47,6 +47,11 @@
 		}
 	}
 	&__left-col{
+		p{
+			@include media-breakpoint-up(lg){
+				max-width: 640px;
+			}
+		}
 		//width: 100%;
 		@include media-breakpoint-up(lg){
 			//width: 55.5%;

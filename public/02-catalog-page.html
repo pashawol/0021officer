@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+
+<!--mixin breadcrumb(...items)
+nav(aria-label="breadcrumb" )
+	ol.breadcrumb(itemscope itemtype="http://schema.org/BreadcrumbList")
+		-for (var i = 0; i < items.length; i++)
+			li.breadcrumb-item( class=(i == items.length - 1 ? "active" : '')   itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
+				a(href=(i == 0 ? "/" : '#') itemprop="item" )
+					span( itemprop="name")= items[i]
+					meta(itemprop="position" content= (i + 1) )
+
+--><!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -70,7 +80,7 @@
 				<div class="top-nav block-with-lazy">
 					<div class="container">
 						<div class="row position-relative">
-							<div class="top-nav__logo-col col col-auto"><a href="#"><img src="img/@2x/logo.png" alt=""/></a>
+							<div class="top-nav__logo-col col col-auto"><a href="/"><img src="img/@2x/logo.png" alt=""/></a>
 							</div>
 							<div class="top-nav__search-col col">
 								<div class="form-wrap">
@@ -102,32 +112,19 @@
 							</div>
 							<div class="top-nav__inline-catalog-block col-12">
 								<ul class="menu">
-									<li class="menu-item"><a class="top-nav__inline-catalog-link" href="#">КОСТЮМЫ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">КУРТКИ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">БРЮКИ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">ЖИЛЕТЫ РАЗГРУЗКИ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">ГОЛОВНЫЕ УБОРЫ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">ФУРНИТУРА</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">ШЕВРОНЫ ПОГОНЫ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">ТРИКОТАЖ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">РУБАШКИ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">РЮКЗАКИ СУМКИ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">ОБУВЬ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">СВИТЕРА ТОЛСТОВКИ</a>
-									</li>
-									<li><a class="top-nav__inline-catalog-link" href="#">АКСЕССУАРЫ</a>
-									</li>
+									<li class="menu-item"><a href="#">КОСТЮМЫ</a></li>
+									<li><a href="#">КУРТКИ</a></li>
+									<li><a href="#">БРЮКИ</a></li>
+									<li><a href="#">ЖИЛЕТЫ РАЗГРУЗКИ</a></li>
+									<li><a href="#">ГОЛОВНЫЕ УБОРЫ</a></li>
+									<li><a href="#">ФУРНИТУРА</a></li>
+									<li><a href="#">ШЕВРОНЫ ПОГОНЫ</a></li>
+									<li><a href="#">ТРИКОТАЖ</a></li>
+									<li><a href="#">РУБАШКИ</a></li>
+									<li><a href="#">РЮКЗАКИ СУМКИ</a></li>
+									<li><a href="#">ОБУВЬ</a></li>
+									<li><a href="#">СВИТЕРА ТОЛСТОВКИ</a></li>
+									<li><a href="#">АКСЕССУАРЫ</a></li>
 								</ul>
 							</div>
 							<div class="top-nav__mobile-category-search-strip d-block d-md-none col-12">
@@ -155,19 +152,19 @@
 			<!-- start sCategory-->
 			<section class="sCategory section" id="sCategory">
 				<div class="container">
-					<nav aria-label="breadcrumb">
-						<ol class="breadcrumb" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
-							<li class="breadcrumb-item" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Главная</span>
+					<nav class="breadcrumb-slider-js-prod-card03 swiper-container" aria-label="breadcrumb">
+						<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+							<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Главная</span>
 									<meta itemprop="position" content="1"/></a></li>
-							<li class="breadcrumb-item" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Каталог</span>
+							<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Каталог</span>
 									<meta itemprop="position" content="2"/></a></li>
-							<li class="breadcrumb-item active" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Жилеты и разгрузки</span>
+							<li class="breadcrumb-item swiper-slide active" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Жилеты и разгрузки</span>
 									<meta itemprop="position" content="3"/></a></li>
 						</ol>
 					</nav>
 					<h2 class="h2">Жилеты и разгрузки</h2>
 					<div class="sCategory__headline-strip">
-						<div class="sCategory__catalot-col">
+						<div class="sCategory__catalot-col d-none d-md-block">
 							<div class="sCategory__burger-cont burger-frame"><span></span>
 							</div><span class="sCategory__catalog-txt">Каталог</span>
 						</div>
@@ -179,7 +176,7 @@
 									<option>По наименованию3</option>
 								</select>
 							</div>
-							<div class="sCategory__show-for">
+							<div class="sCategory__show-for d-none d-md-block">
 								<div class="show-for-cont"><span class="show-for-txt">Показывать по:</span>
 									<div class="show-for-btn-box">
 										<button class="show-for-btn">12</button>
@@ -189,7 +186,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="sCategory__vue-btns-box-col d-none d-sm-block">
+						<div class="sCategory__vue-btns-box-col d-none d-md-block">
 							<button class="sCategory__vue-btn vue-btn-square active">
 								<svg class="icon icon-vue-btn-square ">
 									<use xlink:href="img/svg/sprite.svg#vue-btn-square"></use>
@@ -202,26 +199,26 @@
 							</button>
 						</div>
 					</div>
-					<div class="square-items-bl row">
+					<div class="row square-items-bl">
 						<div class="col-12 col-sm-6 col-md-4 col-lg-3">
 							<div class="square-card-item"><a class="square-card-item__like-btn" href="#">
 								<svg class="icon icon-like ">
 									<use xlink:href="img/svg/sprite.svg#like"></use>
-								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img active" src="img/@2x/armor1.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
+								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img lazy" src="#" data-src="img/@2x/category-img1.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img2.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img3.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img lazy active" src="#" data-src="img/@2x/armor1.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img4.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
 								<div class="square-card-item__price-bl">3 300 руб.
 								</div>
 								<div class="square-card-item__color-choise-bl">
-									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
 									</div>
 								</div>
 							</div>
@@ -230,21 +227,21 @@
 							<div class="square-card-item"><a class="square-card-item__like-btn" href="#">
 								<svg class="icon icon-like ">
 									<use xlink:href="img/svg/sprite.svg#like"></use>
-								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img active" src="img/@2x/armor2.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
+								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img lazy" src="#" data-src="img/@2x/category-img1.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img2.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img3.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img lazy active" src="#" data-src="img/@2x/armor2.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img4.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
 								<div class="square-card-item__price-bl">3 300 руб.
 								</div>
 								<div class="square-card-item__color-choise-bl">
-									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
 									</div>
 								</div>
 							</div>
@@ -253,21 +250,21 @@
 							<div class="square-card-item"><a class="square-card-item__like-btn" href="#">
 								<svg class="icon icon-like ">
 									<use xlink:href="img/svg/sprite.svg#like"></use>
-								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img active" src="img/@2x/armor3.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
+								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img lazy" src="#" data-src="img/@2x/category-img1.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img2.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img3.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img lazy active" src="#" data-src="img/@2x/armor3.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img4.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
 								<div class="square-card-item__price-bl">3 300 руб.
 								</div>
 								<div class="square-card-item__color-choise-bl">
-									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
 									</div>
 								</div>
 							</div>
@@ -276,21 +273,21 @@
 							<div class="square-card-item"><a class="square-card-item__like-btn" href="#">
 								<svg class="icon icon-like ">
 									<use xlink:href="img/svg/sprite.svg#like"></use>
-								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img active" src="img/@2x/armor4.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
+								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img lazy" src="#" data-src="img/@2x/category-img1.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img2.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img3.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img lazy active" src="#" data-src="img/@2x/armor4.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img4.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
 								<div class="square-card-item__price-bl">3 300 руб.
 								</div>
 								<div class="square-card-item__color-choise-bl">
-									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
 									</div>
 								</div>
 							</div>
@@ -299,21 +296,21 @@
 							<div class="square-card-item"><a class="square-card-item__like-btn" href="#">
 								<svg class="icon icon-like ">
 									<use xlink:href="img/svg/sprite.svg#like"></use>
-								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img active" src="img/@2x/armor1.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
+								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img lazy" src="#" data-src="img/@2x/category-img1.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img2.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img3.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img lazy active" src="#" data-src="img/@2x/armor1.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img4.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
 								<div class="square-card-item__price-bl">3 300 руб.
 								</div>
 								<div class="square-card-item__color-choise-bl">
-									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
 									</div>
 								</div>
 							</div>
@@ -322,21 +319,21 @@
 							<div class="square-card-item"><a class="square-card-item__like-btn" href="#">
 								<svg class="icon icon-like ">
 									<use xlink:href="img/svg/sprite.svg#like"></use>
-								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img active" src="img/@2x/armor2.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
+								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img lazy" src="#" data-src="img/@2x/category-img1.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img2.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img3.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img lazy active" src="#" data-src="img/@2x/armor2.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img4.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
 								<div class="square-card-item__price-bl">3 300 руб.
 								</div>
 								<div class="square-card-item__color-choise-bl">
-									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
 									</div>
 								</div>
 							</div>
@@ -345,21 +342,21 @@
 							<div class="square-card-item"><a class="square-card-item__like-btn" href="#">
 								<svg class="icon icon-like ">
 									<use xlink:href="img/svg/sprite.svg#like"></use>
-								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img active" src="img/@2x/armor3.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
+								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img lazy" src="#" data-src="img/@2x/category-img1.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img2.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img3.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img lazy active" src="#" data-src="img/@2x/armor3.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img4.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
 								<div class="square-card-item__price-bl">3 300 руб.
 								</div>
 								<div class="square-card-item__color-choise-bl">
-									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
 									</div>
 								</div>
 							</div>
@@ -368,21 +365,21 @@
 							<div class="square-card-item"><a class="square-card-item__like-btn" href="#">
 								<svg class="icon icon-like ">
 									<use xlink:href="img/svg/sprite.svg#like"></use>
-								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img active" src="img/@2x/armor4.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
+								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img lazy" src="#" data-src="img/@2x/category-img1.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img2.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img3.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img lazy active" src="#" data-src="img/@2x/armor4.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img4.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
 								<div class="square-card-item__price-bl">3 300 руб.
 								</div>
 								<div class="square-card-item__color-choise-bl">
-									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
 									</div>
 								</div>
 							</div>
@@ -391,21 +388,21 @@
 							<div class="square-card-item"><a class="square-card-item__like-btn" href="#">
 								<svg class="icon icon-like ">
 									<use xlink:href="img/svg/sprite.svg#like"></use>
-								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img active" src="img/@2x/armor1.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
+								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img lazy" src="#" data-src="img/@2x/category-img1.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img2.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img3.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img lazy active" src="#" data-src="img/@2x/armor1.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img4.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
 								<div class="square-card-item__price-bl">3 300 руб.
 								</div>
 								<div class="square-card-item__color-choise-bl">
-									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
 									</div>
 								</div>
 							</div>
@@ -414,21 +411,21 @@
 							<div class="square-card-item"><a class="square-card-item__like-btn" href="#">
 								<svg class="icon icon-like ">
 									<use xlink:href="img/svg/sprite.svg#like"></use>
-								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img active" src="img/@2x/armor2.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
+								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img lazy" src="#" data-src="img/@2x/category-img1.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img2.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img3.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img lazy active" src="#" data-src="img/@2x/armor2.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img4.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
 								<div class="square-card-item__price-bl">3 300 руб.
 								</div>
 								<div class="square-card-item__color-choise-bl">
-									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
 									</div>
 								</div>
 							</div>
@@ -437,21 +434,21 @@
 							<div class="square-card-item"><a class="square-card-item__like-btn" href="#">
 								<svg class="icon icon-like ">
 									<use xlink:href="img/svg/sprite.svg#like"></use>
-								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img active" src="img/@2x/armor3.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
+								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img lazy" src="#" data-src="img/@2x/category-img1.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img2.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img3.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img lazy active" src="#" data-src="img/@2x/armor3.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img4.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
 								<div class="square-card-item__price-bl">3 300 руб.
 								</div>
 								<div class="square-card-item__color-choise-bl">
-									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
 									</div>
 								</div>
 							</div>
@@ -460,28 +457,28 @@
 							<div class="square-card-item"><a class="square-card-item__like-btn" href="#">
 								<svg class="icon icon-like ">
 									<use xlink:href="img/svg/sprite.svg#like"></use>
-								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img active" src="img/@2x/armor4.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img" src="img/@2x/car.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
+								</svg></a><span class="square-card-item__articul-txt">арт: 112056-55</span><a class="square-card-item__img-block" href="#"><img class="product-img lazy" src="#" data-src="img/@2x/category-img1.png" alt="" data-tab-for="1" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img2.png" alt="" data-tab-for="2" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img3.png" alt="" data-tab-for="3" data-tab-content="product-colors-var"/><img class="product-img lazy active" src="#" data-src="img/@2x/armor4.jpg" alt="" data-tab-for="4" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/car.png" alt="" data-tab-for="5" data-tab-content="product-colors-var"/><img class="product-img lazy" src="#" data-src="img/@2x/category-img4.png" alt="" data-tab-for="6" data-tab-content="product-colors-var"/></a><a class="square-card-item__item-name" href="#">Разгрузочная система "Стрелок"(6ш112) олива.</a>
 								<div class="square-card-item__price-bl">3 300 руб.
 								</div>
 								<div class="square-card-item__color-choise-bl">
-									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="1" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture1.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="2" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture2.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="3" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture3.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item active" data-tab-for="4" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture4.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="5" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture5.png" alt="" role="presentation"/>
 									</div>
-									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img" src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
+									<div class="square-card-item__color-choise-item" data-tab-for="6" data-tab-pill="product-colors-var"><img class="square-card-item__color-choise-img lazy" src="#" data-src="img/@2x/armor-texture6.png" alt="" role="presentation"/>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row justify-content-between">
-						<div class="col-auto">
+					<div class="sCategory__show-for-and-pugin-row row">
+						<div class="col-auto col-item">
 							<div class="show-for-cont"><span class="show-for-txt">Показывать по:</span>
 								<div class="show-for-btn-box">
 									<button class="show-for-btn">12</button>
@@ -490,7 +487,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-auto">
+						<div class="col-auto col-item">
 							<div class="pagination-wrapper">
 								<ul class="page-numbers">
 											<li><a class="page-numbers" href="#">1</a>
@@ -513,13 +510,9 @@
 			<!-- start seoSection-->
 			<section class="seoSection section" id="seoSection">
 				<div class="container">
-					<div class="section-title">
-						<h2 class="h2">СЕО Каталога</h2>
-					</div>
-					<p class="seo-par">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при прДавно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при пр</p>
-					<div class="section-title">
-						<h2 class="h2">Полезные материалы</h2>
-					</div>
+					<h2>СЕО Каталога</h2>
+					<p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при прДавно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при пр</p>
+					<h2>Полезные материалы</h2>
 					<div class="news-box">
 						<div class="row">
 							<div class="col-12 col-sm-6 col-lg-3">
@@ -562,7 +555,7 @@
 			<footer class="footer block-with-lazy">
 				<div class="container">
 					<div class="footer__f-menu-strip row">
-						<div class="footer__logo-col col col-auto order-1 order-xl-0"><a href="#"><img src="img/@2x/logo.png" alt=""/></a>
+						<div class="footer__logo-col col col-auto order-1 order-xl-0"><a href="/"><img src="img/@2x/logo.png" alt=""/></a>
 						</div>
 						<div class="footer__menu-col col order-0 order-xl-1 d-none d-md-block">
 							<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">

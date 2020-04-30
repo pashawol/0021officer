@@ -133,7 +133,7 @@ function eventHandler() {
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/04.png);"></div>'); // /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
@@ -249,88 +249,13 @@ function eventHandler() {
 		}).fail(function () {});
 	}); //my custom code
 
-	function CustomTabs2(selectorsArr) {
-		var _iterator = _createForOfIteratorHelper(selectorsArr),
+	function CustomTabsScoped(tabGroupArr) {
+		var _iterator = _createForOfIteratorHelper(tabGroupArr),
 				_step;
 
 		try {
-			var _loop = function _loop() {
-				var selector = _step.value;
-				var tabPills = document.querySelectorAll('[data-tab-pill="' + selector + '"]');
-				var tabContent = document.querySelectorAll('[data-tab-content="' + selector + '"]');
-
-				if (tabPills != [] && tabContent != []) {
-					var _iterator2 = _createForOfIteratorHelper(tabPills),
-							_step2;
-
-					try {
-						for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-							var tab = _step2.value;
-							tab.addEventListener('click', function () {
-								var thisTab;
-
-								var _iterator3 = _createForOfIteratorHelper(tabPills),
-										_step3;
-
-								try {
-									for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-										var _tab = _step3.value;
-
-										_tab.classList.remove('active');
-									}
-								} catch (err) {
-									_iterator3.e(err);
-								} finally {
-									_iterator3.f();
-								}
-
-								var _iterator4 = _createForOfIteratorHelper(tabContent),
-										_step4;
-
-								try {
-									for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-										var contItem = _step4.value;
-										contItem.classList.remove('active');
-
-										if (contItem.getAttribute('data-tab-for') === this.getAttribute('data-tab-for')) {
-											thisTab = contItem;
-										}
-									}
-								} catch (err) {
-									_iterator4.e(err);
-								} finally {
-									_iterator4.f();
-								}
-
-								this.classList.add('active');
-								thisTab.classList.add('active');
-							});
-						}
-					} catch (err) {
-						_iterator2.e(err);
-					} finally {
-						_iterator2.f();
-					}
-				}
-			};
-
 			for (_iterator.s(); !(_step = _iterator.n()).done;) {
-				_loop();
-			}
-		} catch (err) {
-			_iterator.e(err);
-		} finally {
-			_iterator.f();
-		}
-	}
-
-	function CustomTabsScoped(tabGroupArr) {
-		var _iterator5 = _createForOfIteratorHelper(tabGroupArr),
-				_step5;
-
-		try {
-			for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-				var tabGroupItem = _step5.value;
+				var tabGroupItem = _step.value;
 				var scopeNode = void 0;
 				var selector = void 0;
 
@@ -343,46 +268,46 @@ function eventHandler() {
 					if (!scopeNode) return;
 				}
 
-				var _iterator6 = _createForOfIteratorHelper(scopeNode),
-						_step6;
+				var _iterator2 = _createForOfIteratorHelper(scopeNode),
+						_step2;
 
 				try {
-					var _loop2 = function _loop2() {
-						var node = _step6.value;
+					var _loop = function _loop() {
+						var node = _step2.value;
 						var tabPills = node.querySelectorAll('[data-tab-pill="' + selector + '"]');
 						var tabContent = node.querySelectorAll('[data-tab-content="' + selector + '"]');
 
 						if (tabPills != [] && tabContent != []) {
-							var _iterator7 = _createForOfIteratorHelper(tabPills),
-									_step7;
+							var _iterator3 = _createForOfIteratorHelper(tabPills),
+									_step3;
 
 							try {
-								for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
-									var tab = _step7.value;
+								for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+									var tab = _step3.value;
 									tab.addEventListener('click', function () {
 										var thisTab;
 
-										var _iterator8 = _createForOfIteratorHelper(tabPills),
-												_step8;
+										var _iterator4 = _createForOfIteratorHelper(tabPills),
+												_step4;
 
 										try {
-											for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
-												var _tab2 = _step8.value;
+											for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+												var _tab = _step4.value;
 
-												_tab2.classList.remove('active');
+												_tab.classList.remove('active');
 											}
 										} catch (err) {
-											_iterator8.e(err);
+											_iterator4.e(err);
 										} finally {
-											_iterator8.f();
+											_iterator4.f();
 										}
 
-										var _iterator9 = _createForOfIteratorHelper(tabContent),
-												_step9;
+										var _iterator5 = _createForOfIteratorHelper(tabContent),
+												_step5;
 
 										try {
-											for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
-												var contItem = _step9.value;
+											for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+												var contItem = _step5.value;
 												contItem.classList.remove('active');
 
 												if (contItem.getAttribute('data-tab-for') === this.getAttribute('data-tab-for')) {
@@ -390,9 +315,9 @@ function eventHandler() {
 												}
 											}
 										} catch (err) {
-											_iterator9.e(err);
+											_iterator5.e(err);
 										} finally {
-											_iterator9.f();
+											_iterator5.f();
 										}
 
 										this.classList.add('active');
@@ -400,30 +325,64 @@ function eventHandler() {
 									});
 								}
 							} catch (err) {
-								_iterator7.e(err);
+								_iterator3.e(err);
 							} finally {
-								_iterator7.f();
+								_iterator3.f();
 							}
 						}
 					};
 
-					for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
-						_loop2();
+					for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+						_loop();
 					}
 				} catch (err) {
-					_iterator6.e(err);
+					_iterator2.e(err);
 				} finally {
-					_iterator6.f();
+					_iterator2.f();
 				}
 			}
 		} catch (err) {
-			_iterator5.e(err);
+			_iterator.e(err);
 		} finally {
-			_iterator5.f();
+			_iterator.f();
 		}
-	} //product
-	//let generatedMassiveOfEls = getAllElemsID();
+	}
 
+	function breakStringAfterWords() {
+		var allElemsToBeBroken = document.querySelectorAll('[data-break-after]');
+
+		var _iterator6 = _createForOfIteratorHelper(allElemsToBeBroken),
+				_step6;
+
+		try {
+			for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
+				var elem = _step6.value;
+				var amountOfWords = elem.getAttribute('data-break-after');
+				var newSpanClass = 'break-words';
+				var mediaModificator = elem.getAttribute('data-media');
+
+				if (mediaModificator) {
+					newSpanClass += '-' + mediaModificator;
+				}
+
+				var innerWordsArr = elem.innerHTML.split(' ');
+				var wordsToBeInSpan = innerWordsArr.splice(0, amountOfWords);
+				var newSpan = document.createElement('span');
+				newSpan.classList.add(newSpanClass);
+				newSpan.innerHTML = wordsToBeInSpan.join(' ') + ' '; //elem.innerHTML = newSpan + innerWordsArr.join(' ');
+
+				elem.innerHTML = '';
+				elem.appendChild(newSpan);
+				elem.innerHTML += innerWordsArr.join(' ');
+			}
+		} catch (err) {
+			_iterator6.e(err);
+		} finally {
+			_iterator6.f();
+		}
+	}
+
+	breakStringAfterWords(); //product
 
 	CustomTabsScoped([{
 		tabGroup: 'product-colors-var',
@@ -459,7 +418,7 @@ function eventHandler() {
 	}
 
 	function customTabsToggle(slidesArr) {
-		var _loop3 = function _loop3() {
+		var _loop2 = function _loop2() {
 			var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
 					index = _Object$entries$_i[0],
 					tab = _Object$entries$_i[1];
@@ -468,11 +427,11 @@ function eventHandler() {
 				for (var _i2 = 0, _Object$entries2 = Object.entries(slidesArr); _i2 < _Object$entries2.length; _i2++) {
 					var _Object$entries2$_i = _slicedToArray(_Object$entries2[_i2], 2),
 							Subindex = _Object$entries2$_i[0],
-							_tab3 = _Object$entries2$_i[1];
+							_tab2 = _Object$entries2$_i[1];
 
 					if (index !== Subindex) {
-						$(_tab3['toggleBtn']).removeClass('collapsed');
-						$(_tab3['toggleTarget']).slideUp(function () {
+						$(_tab2['toggleBtn']).removeClass('collapsed');
+						$(_tab2['toggleTarget']).slideUp(function () {
 							this.classList.remove('visiable');
 						});
 					}
@@ -483,7 +442,7 @@ function eventHandler() {
 		};
 
 		for (var _i = 0, _Object$entries = Object.entries(slidesArr); _i < _Object$entries.length; _i++) {
-			_loop3();
+			_loop2();
 		}
 	}
 
@@ -498,18 +457,18 @@ function eventHandler() {
 
 	function removeInlineStyle() {
 		if (window.matchMedia("(min-width: 768px)").matches) {
-			var _iterator10 = _createForOfIteratorHelper(customTabsArr),
-					_step10;
+			var _iterator7 = _createForOfIteratorHelper(customTabsArr),
+					_step7;
 
 			try {
-				for (_iterator10.s(); !(_step10 = _iterator10.n()).done;) {
-					var tab = _step10.value;
+				for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
+					var tab = _step7.value;
 					document.querySelector(tab['toggleTarget']).style = '';
 				}
 			} catch (err) {
-				_iterator10.e(err);
+				_iterator7.e(err);
 			} finally {
-				_iterator10.f();
+				_iterator7.f();
 			}
 
 			window.removeEventListener('resize', removeInlineStyle, {
@@ -531,24 +490,62 @@ function eventHandler() {
 		pagination: {
 			el: $(this).find('.clother-slider-pugin'),
 			clickable: true
-		} //...defaultSl,
-		//slidesPerView: 'auto',
-		//watchOverflow: true,
-		//spaceBetween: 0,
-		//freeMode: true,
-		//watchOverflow: true,
-		//slidesPerGroup: 3,
-		// centeredSlides: true,
-		//loop: true,
-		//loopFillGroupWithBlank: true,
-		//touchRatio: 0.2,
-		//slideToClickedSlide: true,
-		//freeModeMomentum: true,
-		//navigation: {
-		//	nextEl: '.swiper-button-next',
-		//	prevEl: '.swiper-button-prev',
-		//},
+		}
+	}); //product card js
 
+	var breadSl = new Swiper('.breadcrumb-slider-js-prod-card03', {
+		slidesPerView: 'auto',
+		// spaceBetween: 30,
+		freeMode: true,
+		freeModeMomentum: true,
+		// spaceBetween: 30,
+		watchOverflow: true
+	}); //photo-galery silders
+
+	var photoGaleryThumb = new Swiper('.slider-card-bl__foto-galery-thumb-slider', {
+		breakpoints: {
+			1: {
+				//slidesPerView: 'auto',
+				direction: 'horizontal',
+				spaceBetween: 10
+			},
+			576: {
+				//slidesPerView: 'auto',
+				direction: 'vertical',
+				spaceBetween: 10
+			}
+		},
+		//loop: true,
+		slidesPerView: 3,
+		//nav
+		navigation: {
+			nextEl: '.thumb-swiper-next',
+			prevEl: '.thumb-swiper-prev'
+		},
+		//on click js
+		on: {
+			click: function click() {
+				photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+				photoGaleryThumb.updateSlidesClasses();
+				photoGalery.updateSlidesClasses();
+			}
+		}
+	});
+	var photoGalery = new Swiper('.slider-card-bl__foto-galery-big-img-slider', {
+		thumbs: {
+			swiper: photoGaleryThumb
+		},
+		lazy: {
+			loadPrevNext: true
+		},
+		loop: true,
+		on: {
+			click: function click() {
+				//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+				photoGaleryThumb.updateSlidesClasses();
+				photoGalery.updateSlidesClasses();
+			}
+		}
 	}); //
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;

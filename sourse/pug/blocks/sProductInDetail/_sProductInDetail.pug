@@ -1,0 +1,135 @@
+mixin sProductInDetail()
+	// start sProductInDetail
+	+b.SECTION.sProductInDetail.section#sProductInDetail&attributes(attributes)
+		.container
+			+breadcrumb('Главная', 'Каталог', 'Жилеты и разгрузки', 'Жилеты и разгрузки')
+			+e.content.row
+				.col-12.col-md-6
+					+sliderCard()
+				.col-12.col-md-6
+					+cardDescr()
+			.row.d-none.d-md-flex
+				.col-6
+					span.h4 Описание
+				.col-6
+					span.h4 Характеристики
+		+e.description-content-bl
+			.container
+				.row
+					.col-12.col-md-6
+						span.h4.d-block.d-md-none Описание
+						+descriptionTxtBl()
+					.col-12.col-md-6
+						span.h4.d-block.d-md-none Характеристики
+						+descriptionTableBl()
+	// end sProductInDetail
+
+mixin sliderCard()
+	+b.slider-card-bl
+		+e.foto-galery-big-img-slider.swiper-container.user-select-none
+			.swiper-wrapper
+				.swiper-slide
+					a.fancy-box-link(href="img/@2x/slider-product-img.jpg" data-fancybox="prodImgGroup")
+						img.big-product-img(src="img/@2x/slider-product-img.jpg" alt="")
+				.swiper-slide
+					a.fancy-box-link(href="img/@2x/car.png" data-fancybox="prodImgGroup")
+						img.big-product-img(src="img/@2x/car.png" alt="")
+				.swiper-slide
+					a.fancy-box-link(href="img/@2x/armor1.jpg" data-fancybox="prodImgGroup")
+						img.big-product-img(src="img/@2x/armor1.jpg" alt="")
+				.swiper-slide
+					a.fancy-box-link(href="img/@2x/armor2.jpg" data-fancybox="prodImgGroup")
+						img.big-product-img(src="img/@2x/armor2.jpg" alt="")
+				.swiper-slide
+					a.fancy-box-link(href="img/@2x/armor3.jpg" data-fancybox="prodImgGroup")
+						img.big-product-img(src="img/@2x/armor3.jpg" alt="")
+		+e.foto-galery-thumb-slider-conatiner
+			.thumb-swiper-prev
+				+icon('angle-top')
+			.thumb-swiper-next
+				+icon('angle-down')
+			+e.foto-galery-thumb-slider.swiper-container.user-select-none
+				.swiper-wrapper
+					.swiper-slide
+						.image-pill
+							img.small-product-img(src='img/@2x/slider-product-img.jpg' alt='')
+					.swiper-slide
+						.image-pill
+							img.small-product-img(src='img/@2x/car.png' alt='')
+					.swiper-slide
+						.image-pill
+							img.small-product-img(src='img/@2x/armor1.jpg' alt='')
+					.swiper-slide
+						.image-pill
+							img.small-product-img(src='img/@2x/armor2.jpg' alt='')
+					.swiper-slide
+						.image-pill
+							img.small-product-img(src='img/@2x/armor3.jpg' alt='')
+
+mixin cardDescr()
+	+b.card-description
+		//+e.product-name.h2(data-break-after="2" data-media='md')
+
+		h1 РПС АВТОМАТЧИКА СМЕРЧ-А ЦИФРА
+		+e.TABLE.tiny-details-table
+			tr.table-row
+				th.first-col Артикул
+				th.last-col 1056689
+			tr.table-row
+				th.first-col Материал
+				th.last-col 100% полиэстер с поулиретановым покрытием
+			tr.table-row
+				th.first-col Наличие
+				th.last-col(style="color: #457c3a; font-weight: bold;") Есть
+			tr.table-row.texture-table-row
+				th.first-col Цвета
+				th.last-col.textures-bl
+					a.textures-item(href="#")
+						img.texture-img(src="img/@2x/prod-item-texture1.jpg" alt="")
+					a.textures-item(href="#")
+						img.texture-img(src="img/@2x/prod-item-texture2.jpg" alt="")
+					a.textures-item(href="#")
+						img.texture-img(src="img/@2x/prod-item-texture3.jpg" alt="")
+					a.textures-item.active(href="#")
+						img.texture-img(src="img/@2x/prod-item-texture4.jpg" alt="")
+					a.textures-item(href="#")
+						img.texture-img(src="img/@2x/prod-item-texture5.jpg" alt="")
+					a.textures-item(href="#")
+						img.texture-img(src="img/@2x/prod-item-texture6.jpg" alt="")
+		+e.price-and-call-back-row.row
+			.col-auto.d-flex
+				+e.SPAN.item-price 3 300 руб.
+			.col
+				+e.A.call-back-btn.btn.btn-pr(href="#") Заказать обратный звонок
+
+mixin descriptionTxtBl()
+	+b.description-txt-block
+		p «Смерч-А» «Цифра» - специальная облегченная разгрузочная система, разработанная с учетом специфики боевой работы стрелка-автоматчика. Применяется спецподразделениями армии и полиции, пользуется спросом среди любителей милитари-игр.
+		p РПС состоит из лямок и поясной платформы – узкой спереди и широкой в задней части. Ременно-плечевая система «Смерч-А» распределяет вес носимой нагрузки между поясной платформой и плечевой обвязкой. Поясная платформа фиксируется ремнем из плотной широкой стропы. Материалы изделия – ткань Оксфорд и нейлон.
+		p В комплекте с РПС поставляются подсумки. Они съемные, крепятся на поясной ремень, застежки у них комбинированные  - фиксируются на «Велкро» и кнопки. Ремень продевается в шлевки на поясной платформе. Объем РПС в поясе регулируется длиной поясного ремня. Некоторые подсумки можно менять местами или заменять на совместимые от других производителей. Тяжелые подсумки типа сухарной сумки и подсумков для магазинов размещаются в определенном порядке, так как на них производитель разместил металлические кольца, к которым крепятся плечевые лямки. Застегивается поясная платформа на быстроразъемную застежку «Фастекс».
+		p Плечевые лямки пристегиваются в поясной платформе металлическими карабинами. Ремни плечевых лямок регулируются по длине. РПС можно носить поверх бронежилета, на зимней одежде. Разгрузка не мешает носить рюкзак или ранец. Подсумки не создают трудностей при передвижении в приседе или полком, не мешают преодолению препятствий.
+
+mixin descriptionTableBl()
+	+b.description-table-bl
+		table
+			tr
+				th Карманы
+				th
+					p 4 нижних кармана под магазин АК
+					p 2 кармана для РГН, РГО. По 2 в каждый карман
+					p 2 кармана для сигнальных ракет
+			tr
+				th Регулировка размера по объему
+				th Есть
+			tr
+				th Регулировка роста
+				th Есть
+			tr
+				th Отверстия для слива воды
+				th Есть
+			tr
+				th Застежка жилета
+				th на 2 фастекса
+			tr
+				th Съемные элементы
+				th Все

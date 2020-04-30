@@ -118,7 +118,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>')
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/04.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -267,31 +267,6 @@ function eventHandler() {
 
 
 	//my custom code
-	function CustomTabs2(selectorsArr) {
-		for (let selector of selectorsArr) {
-			let tabPills = document.querySelectorAll('[data-tab-pill="' + selector + '"]');
-			let tabContent = document.querySelectorAll('[data-tab-content="' + selector + '"]');
-			if (tabPills != [] && tabContent != []) {
-				for (let tab of tabPills) {
-					tab.addEventListener('click', function () {
-						let thisTab;
-						for (let tab of tabPills) {
-							tab.classList.remove('active');
-						}
-						for (let contItem of tabContent) {
-							contItem.classList.remove('active');
-							if (contItem.getAttribute('data-tab-for') === this.getAttribute('data-tab-for')) {
-								thisTab = contItem;
-							}
-						}
-						this.classList.add('active');
-						thisTab.classList.add('active');
-					});
-				}
-			}
-		}
-	}
-
 	function CustomTabsScoped(tabGroupArr) {
 		for (let tabGroupItem of tabGroupArr) {
 			let scopeNode;
@@ -329,9 +304,31 @@ function eventHandler() {
 			}
 		}
 	}
-	//product
-	//let generatedMassiveOfEls = getAllElemsID();
+	function breakStringAfterWords() {
+		let allElemsToBeBroken = document.querySelectorAll('[data-break-after]');
+		for (let elem of allElemsToBeBroken){
+			let amountOfWords = elem.getAttribute('data-break-after');
+			let newSpanClass = 'break-words';
 
+			let mediaModificator = elem.getAttribute('data-media');
+			if (mediaModificator){
+				newSpanClass += '-'+mediaModificator;
+			}
+
+			let innerWordsArr = elem.innerHTML.split(' ');
+			let wordsToBeInSpan = innerWordsArr.splice(0, amountOfWords);
+			let newSpan = document.createElement('span');
+					newSpan.classList.add(newSpanClass);
+					newSpan.innerHTML = wordsToBeInSpan.join(' ') + ' ';
+
+			//elem.innerHTML = newSpan + innerWordsArr.join(' ');
+			elem.innerHTML = '';
+			elem.appendChild(newSpan);
+			elem.innerHTML += innerWordsArr.join(' ');
+		}
+	}
+	breakStringAfterWords();
+	//product
 	CustomTabsScoped([
 		{
 			tabGroup: 'product-colors-var',
@@ -420,25 +417,64 @@ function eventHandler() {
 			el: $(this).find('.clother-slider-pugin'),
 			clickable: true,
 		},
-		//...defaultSl,
-		//slidesPerView: 'auto',
-		//watchOverflow: true,
-		//spaceBetween: 0,
-		//freeMode: true,
-		//watchOverflow: true,
-		//slidesPerGroup: 3,
-
-		// centeredSlides: true,
-		//loop: true,
-		//loopFillGroupWithBlank: true,
-		//touchRatio: 0.2,
-		//slideToClickedSlide: true,
-		//freeModeMomentum: true,
-		//navigation: {
-		//	nextEl: '.swiper-button-next',
-		//	prevEl: '.swiper-button-prev',
-		//},
 	});
+	//product card js
+	var breadSl = new Swiper('.breadcrumb-slider-js-prod-card03', {
+		slidesPerView: 'auto',
+		// spaceBetween: 30,
+		freeMode: true,
+		freeModeMomentum: true,
+		// spaceBetween: 30,
+		watchOverflow: true,
+	});
+
+	//photo-galery silders
+	let photoGaleryThumb = new Swiper('.slider-card-bl__foto-galery-thumb-slider', {
+		breakpoints: {
+			1: {
+				//slidesPerView: 'auto',
+				direction: 'horizontal',
+				spaceBetween: 10,
+			},
+			576: {
+				//slidesPerView: 'auto',
+				direction: 'vertical',
+				spaceBetween: 10,
+			},
+		},
+		//loop: true,
+		slidesPerView  : 3,
+		//nav
+		navigation: {
+			nextEl: '.thumb-swiper-next',
+			prevEl: '.thumb-swiper-prev',
+		},
+		//on click js
+		on: {
+			click: () => {
+				photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+				photoGaleryThumb.updateSlidesClasses();
+				photoGalery.updateSlidesClasses();
+			},
+		},
+	});
+	let photoGalery = new Swiper('.slider-card-bl__foto-galery-big-img-slider', {
+		thumbs: {
+			swiper: photoGaleryThumb
+		},
+		lazy: {
+			loadPrevNext: true,
+		},
+		loop: true,
+		on: {
+			click: () => {
+				//photoGaleryThumb.slideTo(photoGaleryThumb.clickedIndex - 1, 700, false);
+				photoGaleryThumb.updateSlidesClasses();
+				photoGalery.updateSlidesClasses();
+			},
+		},
+	});
+
 	//
 		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 		if (isIE11) {

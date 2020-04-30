@@ -5,7 +5,7 @@ mixin sCategory()
 			+breadcrumb('Главная', 'Каталог', 'Жилеты и разгрузки')
 			h2.h2 Жилеты и разгрузки
 			+e.headline-strip
-				+e.catalot-col
+				+e.catalot-col.d-none.d-md-block
 					+e.burger-cont.burger-frame
 						span
 					+e.SPAN.catalog-txt Каталог
@@ -16,14 +16,14 @@ mixin sCategory()
 							option По наименованию
 							option По наименованию2
 							option По наименованию3
-					+e.show-for
+					+e.show-for.d-none.d-md-block
 						+showFor()
-				+e.vue-btns-box-col.d-none.d-sm-block
+				+e.vue-btns-box-col.d-none.d-md-block
 					+e.BUTTON.vue-btn.vue-btn-square.active
 						+icon("vue-btn-square")
 					+e.BUTTON.vue-btn.vue-btn-table
 						+icon("vue-btn-table")
-			.square-items-bl.row
+			.row.square-items-bl
 				+squareItem('1')
 				+squareItem('2')
 				+squareItem('3')
@@ -38,10 +38,10 @@ mixin sCategory()
 				+squareItem('2')
 				+squareItem('3')
 				+squareItem('4')
-			.row.justify-content-between
-				.col-auto
+			+e.show-for-and-pugin-row.row
+				.col-auto.col-item
 					+showFor()
-				.col-auto
+				.col-auto.col-item
 					+pugin1()
 	// end sCategory
 
@@ -53,36 +53,36 @@ mixin showFor()
 			button.show-for-btn.active 24
 			button.show-for-btn 48
 
-mixin squareItem(imgNum)
-	.col-12.col-sm-6.col-md-4.col-lg-3
+mixin squareItem(imgNum, bootstrapGrid='col-sm-6 col-md-4 col-lg-3' )
+	.col-12(class=bootstrapGrid)
 		+b.square-card-item
 			+e.A.like-btn(href="#")
 				+icon('like')
 			+e.SPAN.articul-txt арт: 112056-55
 			+e.img-block(href="#")
-				img.product-img(src="img/@2x/car.png" alt="")(data-tab-for='1' data-tab-content='product-colors-var')
-				img.product-img(src="img/@2x/car.png" alt="")(data-tab-for='2' data-tab-content='product-colors-var')
-				img.product-img(src="img/@2x/car.png" alt="")(data-tab-for='3' data-tab-content='product-colors-var')
-				img.product-img.active(src=`img/@2x/armor${imgNum}.jpg` alt="")(data-tab-for='4' data-tab-content='product-colors-var')
-				img.product-img(src="img/@2x/car.png" alt="")(data-tab-for='5' data-tab-content='product-colors-var')
-				img.product-img(src="img/@2x/car.png" alt="")(data-tab-for='6' data-tab-content='product-colors-var')
+				img.product-img.lazy(src="#" data-src="img/@2x/category-img1.png" alt="" data-tab-for='1' data-tab-content='product-colors-var')
+				img.product-img.lazy(src="#" data-src="img/@2x/category-img2.png" alt="" data-tab-for='2' data-tab-content='product-colors-var')
+				img.product-img.lazy(src="#" data-src="img/@2x/category-img3.png" alt="" data-tab-for='3' data-tab-content='product-colors-var')
+				img.product-img.lazy.active(src="#" data-src=`img/@2x/armor${imgNum}.jpg` alt="" data-tab-for='4' data-tab-content='product-colors-var')
+				img.product-img.lazy(src="#" data-src="img/@2x/car.png" alt="" data-tab-for='5' data-tab-content='product-colors-var')
+				img.product-img.lazy(src="#" data-src="img/@2x/category-img4.png" alt="" data-tab-for='6' data-tab-content='product-colors-var')
 			+e.item-name(href="#") Разгрузочная система "Стрелок"(6ш112) олива.
 			+e.price-bl 3 300 руб.
 			+e.color-choise-bl
 				+e.color-choise-item(data-tab-for='1'  data-tab-pill='product-colors-var')
-					+e.IMG.color-choise-img(src="img/@2x/armor-texture1.png" alt="")
+					+e.IMG.color-choise-img.lazy(src="#" data-src="img/@2x/armor-texture1.png" alt="")
 
 				+e.color-choise-item(data-tab-for='2'  data-tab-pill='product-colors-var')
-					+e.IMG.color-choise-img(src="img/@2x/armor-texture2.png" alt="")
+					+e.IMG.color-choise-img.lazy(src="#" data-src="img/@2x/armor-texture2.png" alt="")
 
 				+e.color-choise-item(data-tab-for='3'  data-tab-pill='product-colors-var')
-					+e.IMG.color-choise-img(src="img/@2x/armor-texture3.png" alt="")
+					+e.IMG.color-choise-img.lazy(src="#" data-src="img/@2x/armor-texture3.png" alt="")
 
 				+e.color-choise-item.active(data-tab-for='4'  data-tab-pill='product-colors-var')
-					+e.IMG.color-choise-img(src="img/@2x/armor-texture4.png" alt="")
+					+e.IMG.color-choise-img.lazy(src="#" data-src="img/@2x/armor-texture4.png" alt="")
 
 				+e.color-choise-item(data-tab-for='5'  data-tab-pill='product-colors-var')
-					+e.IMG.color-choise-img(src="img/@2x/armor-texture5.png" alt="")
+					+e.IMG.color-choise-img.lazy(src="#" data-src="img/@2x/armor-texture5.png" alt="")
 
 				+e.color-choise-item(data-tab-for='6'  data-tab-pill='product-colors-var')
-					+e.IMG.color-choise-img(src="img/@2x/armor-texture6.png" alt="")
+					+e.IMG.color-choise-img.lazy(src="#" data-src="img/@2x/armor-texture6.png" alt="")

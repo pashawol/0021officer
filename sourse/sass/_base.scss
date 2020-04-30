@@ -396,16 +396,34 @@ iframe {
 	border: none;
 }
 
-.h2{
+h1, .h1{
 	line-height: 1.5;
 	font-weight: bold;
-	font-size: $h2-font-size;
 }
 
-.h4{
+h2, .h2{
 	line-height: 1.5;
 	font-weight: bold;
-	font-size: $h4-font-size;
+	//font-size: $h2-font-size;
+	//@include rfs($h2-font-size);
+}
+h3, .h3{
+	line-height: 1.5;
+	font-weight: bold;
+}
+h4, .h4{
+	line-height: 1.5;
+	font-weight: bold;
+}
+
+h5, .h5{
+	line-height: 1.5;
+	font-weight: bold;
+}
+
+h6, .h6{
+	line-height: 1.5;
+	font-weight: bold;
 }
 
 //.burger-frame
@@ -479,15 +497,16 @@ iframe {
 		font-weight: bold;
 		font-size: rem(12px);
 		@include mt();
-		&.active{
-			background-color: $danger;
-			color: white;
-		}
 		&:last-child{
 			margin-right: 0;
 		}
 		&:hover{
-			box-shadow: 0 0 8px -1px darken($light, .5);
+			background-color: $pagination-hover-bg;
+			border-color: $pagination-hover-border-color;
+		}
+		&.active{
+			background-color: $danger;
+			color: white;
 		}
 	}
 }
@@ -509,6 +528,10 @@ iframe {
 				color: $deep-dark;
 				border: none;
 				background-color: $deep-gray-pugin;
+				&:hover{
+					background-color: $pagination-hover-bg;
+					border-color: $pagination-hover-border-color;
+				}
 			}
 			&.three-dots{
 				a.page-numbers{
@@ -527,5 +550,57 @@ iframe {
 				}
 			}
 		}
+	}
+}
+
+.user-select-none{
+	* {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+}
+
+//cutsom brake word css
+
+span.break-words{
+	display: block;
+}
+
+span.break-words-sm{
+	display: inline;
+	@include media-breakpoint-up(sm){
+		display: block;
+	}
+}
+
+span.break-words-md{
+	display: inline;
+	@include media-breakpoint-up(md){
+		display: block;
+	}
+}
+
+span.break-words-lg{
+	display: inline;
+	@include media-breakpoint-up(lg){
+		display: block;
+	}
+}
+
+span.break-words-xl{
+	display: inline;
+	@include media-breakpoint-up(xl){
+		display: block;
+	}
+}
+
+//category grid css
+
+.roww-40-20{
+	@include roww(10);
+	@include media-breakpoint-up(xl){
+		@include roww(20);
 	}
 }

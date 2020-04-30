@@ -5,14 +5,16 @@
 		//border: 1px solid red;
 		padding: rem(50) 0;
 
-		.seo-par{
+		& > p{
 			margin-bottom: rem(50);
 		}
-		.section-title{
-			.h2{
-				margin: 0 0 rem(50) 0;
-			}
+
+		h2{
+			@extend .h2;
+			margin: 0 0 rem(50) 0;
 		}
+
+
 		.news-box{
 			&__img-box-container{
 				width: 100%;

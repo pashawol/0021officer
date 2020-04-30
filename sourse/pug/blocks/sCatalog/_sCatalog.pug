@@ -12,7 +12,7 @@ mixin sCatalog()
 						+clotherSlide('img/@2x/index-slider-bg.jpg')
 				.clother-slider-pugin.d-none.d-md-block
 			.h2.catalog-txt Каталог
-			.row
+			.row.roww-40-20
 				- let categoryItemsList = ['Костюмы', 'Куртки', 'Брюки', 'Жилеты, разгрузки', 'Головные уборы', 'Фурнитура', 'Шевроны, погоны', 'Трикотаж', 'Рубашки', 'Рюкзаки, сумки', 'Свитера, толстовки', 'Обувь'];
 				- for(var i = 1; i < 13; i++) {
 					+categoryItem(i, categoryItemsList[i-1])
@@ -31,7 +31,6 @@ mixin clotherSlide(bgImg)
 	+b.clother-slide
 		+e.IMG.background-img.swiper-lazy(src="#" data-src=bgImg alt="")
 		+e.slide-content
-			+e.dash-cont
 				+e.slide-title
 					|Форменная одежда,
 					|обувь, снаряжение
