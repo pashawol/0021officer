@@ -9,6 +9,8 @@ mixin sCategory()
 					+e.burger-cont.burger-frame
 						span
 					+e.SPAN.catalog-txt Каталог
+					.catalog-menu-cont
+						+inlineCatalogContent()
 				+e.sort-show-col
 					+e.sort-select-box
 						+e.SPAN.sort-txt Сортировать:
@@ -86,3 +88,4 @@ mixin squareItem(imgNum, bootstrapGrid='col-sm-6 col-md-4 col-lg-3' )
 
 				+e.color-choise-item(data-tab-for='6'  data-tab-pill='product-colors-var')
 					+e.IMG.color-choise-img.lazy(src="#" data-src="img/@2x/armor-texture6.png" alt="")
+

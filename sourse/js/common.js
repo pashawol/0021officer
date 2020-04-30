@@ -475,6 +475,30 @@ function eventHandler() {
 		},
 	});
 
+	//alt menu js
+	$('.sCategory__burger-cont').click(function () {
+		this.classList.toggle('collapsed');
+		$('.sCategory__catalot-col .catalog-menu-cont').slideToggle(function () {
+			this.classList.toggle('active');
+		});
+		event.stopPropagation();
+		if (this.classList.contains('collapsed')){
+			//console.log('open');
+			document.body.addEventListener('click', hideAltMenuOnMissCL);
+		}
+		else{
+			//console.log('close');
+			document.body.removeEventListener('click', hideAltMenuOnMissCL);
+		}
+
+	});
+	function hideAltMenuOnMissCL() {
+		if (!event.target.closest('.catalog-menu-cont')){
+			$('.sCategory__burger-cont').click();
+			document.body.removeEventListener('click', hideAltMenuOnMissCL);
+		}
+	}
+
 	//
 		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 		if (isIE11) {
