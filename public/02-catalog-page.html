@@ -1,14 +1,4 @@
-
-<!--mixin breadcrumb(...items)
-nav(aria-label="breadcrumb" )
-	ol.breadcrumb(itemscope itemtype="http://schema.org/BreadcrumbList")
-		-for (var i = 0; i < items.length; i++)
-			li.breadcrumb-item( class=(i == items.length - 1 ? "active" : '')   itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
-				a(href=(i == 0 ? "/" : '#') itemprop="item" )
-					span( itemprop="name")= items[i]
-					meta(itemprop="position" content= (i + 1) )
-
---><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -149,8 +139,8 @@ nav(aria-label="breadcrumb" )
 				<!-- end top-nav-->
 			</header>
 			<!-- end HEADER.header-->
-			<!-- start sCategory-->
-			<section class="sCategory section" id="sCategory">
+			<!-- start BreadcrumbWrap-->
+			<div class="BreadcrumbWrap" id="BreadcrumbWrap">
 				<div class="container">
 					<nav class="breadcrumb-slider-js-prod-card03 swiper-container" aria-label="breadcrumb">
 						<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
@@ -162,6 +152,12 @@ nav(aria-label="breadcrumb" )
 									<meta itemprop="position" content="3"/></a></li>
 						</ol>
 					</nav>
+				</div>
+			</div>
+			<!-- end BreadcrumbWrap-->
+			<!-- start sCategory-->
+			<section class="sCategory section" id="sCategory">
+				<div class="container">
 					<h2 class="h2">Жилеты и разгрузки</h2>
 					<div class="sCategory__headline-strip">
 						<div class="sCategory__catalot-col d-none d-md-block">
@@ -601,7 +597,7 @@ nav(aria-label="breadcrumb" )
 								<div class="form-wrap__input-wrap form-group modificator"><input class="form-wrap__input form-control" type="email" placeholder="Ваш e-mail" name="email"/>
 								</div>
 								<!-- +e.input-wrap-->
-								<button class="form-wrap__subscribe-btn btn btn-pr">Подписаться
+								<button class="form-wrap__subscribe-btn btn btn-primary">Подписаться
 								</button>
 							</form>
 						</div>

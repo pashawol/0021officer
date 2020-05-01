@@ -1,16 +1,6 @@
 	// start .sSmaplePage
 	.sSmaplePage {
-		border-top: 1px solid rgba($black, .1);
-		border-bottom: 1px solid rgba($black, .1);
-		//border-top: 1px solid red; //
-		//color: red !important; //
-		//position: relative; //
-		//margin-top: rem(-5); //
-
-		padding-top: rem(15);
-		.breadcrumb{
-			padding-bottom: rem(15);
-		}
+		padding-top: rem(0);
 		h1{
 			line-height: rem(48px);
 			margin-bottom: rem(21);

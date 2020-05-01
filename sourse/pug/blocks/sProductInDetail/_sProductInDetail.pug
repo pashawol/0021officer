@@ -2,25 +2,19 @@ mixin sProductInDetail()
 	// start sProductInDetail
 	+b.SECTION.sProductInDetail.section#sProductInDetail&attributes(attributes)
 		.container
-			+breadcrumb('Главная', 'Каталог', 'Жилеты и разгрузки', 'Жилеты и разгрузки')
 			+e.content.row
 				.col-12.col-md-6
 					+sliderCard()
 				.col-12.col-md-6
 					+cardDescr()
-			.row.d-none.d-md-flex
-				.col-6
-					span.h4 Описание
-				.col-6
-					span.h4 Характеристики
 		+e.description-content-bl
 			.container
 				.row
 					.col-12.col-md-6
-						span.h4.d-block.d-md-none Описание
+						span.h4.char-headline Описание
 						+descriptionTxtBl()
 					.col-12.col-md-6
-						span.h4.d-block.d-md-none Характеристики
+						span.h4.char-headline Характеристики
 						+descriptionTableBl()
 	// end sProductInDetail
 
@@ -68,8 +62,7 @@ mixin sliderCard()
 
 mixin cardDescr()
 	+b.card-description
-		//+e.product-name.h2(data-break-after="2" data-media='md')
-
+		//-+e.product-name.h2(data-break-after="2" data-media='md')
 		h1 РПС АВТОМАТЧИКА СМЕРЧ-А ЦИФРА
 		+e.TABLE.tiny-details-table
 			tr.table-row
@@ -100,7 +93,7 @@ mixin cardDescr()
 			.col-auto.d-flex
 				+e.SPAN.item-price 3 300 руб.
 			.col
-				+e.A.call-back-btn.btn.btn-pr(href="#") Заказать обратный звонок
+				+e.A.call-back-btn.btn.btn-primary(href="#") Заказать обратный звонок
 
 mixin descriptionTxtBl()
 	+b.description-txt-block

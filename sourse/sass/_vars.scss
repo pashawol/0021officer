@@ -57,7 +57,7 @@ $theme-colors: () !default;
 $theme-colors: map-merge(("primary": $primary,
     "secondary": $secondary,
     "success": $success,
-    "pr": $pr,
+    //"pr": $pr,// переделать в праймери
     // "info":       $info,
     "warning": $warning,
     "danger": $danger,

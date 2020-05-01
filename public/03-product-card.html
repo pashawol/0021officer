@@ -1,14 +1,4 @@
-
-<!--mixin breadcrumb(...items)
-nav(aria-label="breadcrumb" )
-	ol.breadcrumb(itemscope itemtype="http://schema.org/BreadcrumbList")
-		-for (var i = 0; i < items.length; i++)
-			li.breadcrumb-item( class=(i == items.length - 1 ? "active" : '')   itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
-				a(href=(i == 0 ? "/" : '#') itemprop="item" )
-					span( itemprop="name")= items[i]
-					meta(itemprop="position" content= (i + 1) )
-
---><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -149,8 +139,8 @@ nav(aria-label="breadcrumb" )
 				<!-- end top-nav-->
 			</header>
 			<!-- end HEADER.header-->
-			<!-- start sProductInDetail-->
-			<section class="sProductInDetail section" id="sProductInDetail">
+			<!-- start BreadcrumbWrap-->
+			<div class="BreadcrumbWrap" id="BreadcrumbWrap">
 				<div class="container">
 					<nav class="breadcrumb-slider-js-prod-card03 swiper-container" aria-label="breadcrumb">
 						<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
@@ -158,12 +148,16 @@ nav(aria-label="breadcrumb" )
 									<meta itemprop="position" content="1"/></a></li>
 							<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Каталог</span>
 									<meta itemprop="position" content="2"/></a></li>
-							<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Жилеты и разгрузки</span>
-									<meta itemprop="position" content="3"/></a></li>
 							<li class="breadcrumb-item swiper-slide active" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Жилеты и разгрузки</span>
-									<meta itemprop="position" content="4"/></a></li>
+									<meta itemprop="position" content="3"/></a></li>
 						</ol>
 					</nav>
+				</div>
+			</div>
+			<!-- end BreadcrumbWrap-->
+			<!-- start sProductInDetail-->
+			<section class="sProductInDetail section" id="sProductInDetail">
+				<div class="container">
 					<div class="sProductInDetail__content row">
 						<div class="col-12 col-md-6">
 							<div class="slider-card-bl">
@@ -211,7 +205,6 @@ nav(aria-label="breadcrumb" )
 						</div>
 						<div class="col-12 col-md-6">
 							<div class="card-description">
-								<!--+e.product-name.h2(data-break-after="2" data-media='md')-->
 								<h1>РПС АВТОМАТЧИКА СМЕРЧ-А ЦИФРА</h1>
 								<table class="card-description__tiny-details-table">
 									<tr class="table-row">
@@ -234,21 +227,17 @@ nav(aria-label="breadcrumb" )
 								<div class="card-description__price-and-call-back-row row">
 									<div class="col-auto d-flex"><span class="card-description__item-price">3 300 руб.</span>
 									</div>
-									<div class="col"><a class="card-description__call-back-btn btn btn-pr" href="#">Заказать обратный звонок</a>
+									<div class="col"><a class="card-description__call-back-btn btn btn-primary" href="#">Заказать обратный звонок</a>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row d-none d-md-flex">
-						<div class="col-6"><span class="h4">Описание</span></div>
-						<div class="col-6"><span class="h4">Характеристики</span></div>
-					</div>
 				</div>
 				<div class="sProductInDetail__description-content-bl">
 					<div class="container">
 						<div class="row">
-							<div class="col-12 col-md-6"><span class="h4 d-block d-md-none">Описание</span>
+							<div class="col-12 col-md-6"><span class="h4 char-headline">Описание</span>
 								<div class="description-txt-block">
 									<p>«Смерч-А» «Цифра» - специальная облегченная разгрузочная система, разработанная с учетом специфики боевой работы стрелка-автоматчика. Применяется спецподразделениями армии и полиции, пользуется спросом среди любителей милитари-игр.</p>
 									<p>РПС состоит из лямок и поясной платформы – узкой спереди и широкой в задней части. Ременно-плечевая система «Смерч-А» распределяет вес носимой нагрузки между поясной платформой и плечевой обвязкой. Поясная платформа фиксируется ремнем из плотной широкой стропы. Материалы изделия – ткань Оксфорд и нейлон.</p>
@@ -256,7 +245,7 @@ nav(aria-label="breadcrumb" )
 									<p>Плечевые лямки пристегиваются в поясной платформе металлическими карабинами. Ремни плечевых лямок регулируются по длине. РПС можно носить поверх бронежилета, на зимней одежде. Разгрузка не мешает носить рюкзак или ранец. Подсумки не создают трудностей при передвижении в приседе или полком, не мешают преодолению препятствий.</p>
 								</div>
 							</div>
-							<div class="col-12 col-md-6"><span class="h4 d-block d-md-none">Характеристики</span>
+							<div class="col-12 col-md-6"><span class="h4 char-headline">Характеристики</span>
 								<div class="description-table-bl">
 									<table>
 										<tr>
@@ -428,7 +417,7 @@ nav(aria-label="breadcrumb" )
 								<div class="form-wrap__input-wrap form-group modificator"><input class="form-wrap__input form-control" type="email" placeholder="Ваш e-mail" name="email"/>
 								</div>
 								<!-- +e.input-wrap-->
-								<button class="form-wrap__subscribe-btn btn btn-pr">Подписаться
+								<button class="form-wrap__subscribe-btn btn btn-primary">Подписаться
 								</button>
 							</form>
 						</div>

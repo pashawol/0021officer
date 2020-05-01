@@ -6,6 +6,7 @@ include ../blocks/sContact/_sContact.pug
 include ../blocks/sCatalog/_sCatalog.pug
 include ../blocks/sCategory/_sCategory.pug
 include ../blocks/sOfficerPride/_sOfficerPride.pug
+include ../blocks/BreadcrumbWrap/_BreadcrumbWrap.pug
 
 include ../blocks/seoSection/_seoSection.pug
 
@@ -18,6 +19,7 @@ block pagecontent
 	+header()
 		+topLine()
 		+top-nav()
+	+BreadcrumbWrap()
 	+sCategory()
 	+seoSection()
 		+seoSectionon02page()

@@ -1,8 +1,7 @@
 
 	// start .sProductInDetail
 	.sProductInDetail {
-		border-top: 1px solid rgba($black, .1);
-		padding-top: rem(15);
+		padding-top: rem(0);
 
 		&__content{
 			padding-top: rem(50);
@@ -11,9 +10,25 @@
 
 
 		&__description-content-bl{
+			position: relative;
 			@include media-breakpoint-up(md){
-				border-top: 1px solid rgba($black, 0.1);
-				margin-top: rem(20);
+				//border-top: 1px solid rgba($black, 0.1);
+				//margin-top: rem(20);
+				&:after{
+					content: '';
+					width: 220vw;
+					height: 1px;
+					background-color: $black;
+					opacity: .1;
+					position: absolute;
+					top: rem(55);
+					left: -100vw;
+				}
+				.char-headline{
+					display: block;
+					//background-color: red;
+					padding-bottom: rem(25);
+				}
 			}
 		}
 		&__{}

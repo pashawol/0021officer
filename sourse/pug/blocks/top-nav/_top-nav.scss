@@ -101,11 +101,11 @@
 		.icon{
 			margin-right: rem(10px);
 			font-size: rem(20px);
-			color: $primary;
+			//color: $primary;
 		}
 		.phone-num{
 			font-weight: bold;
-			color: $primary;
+			//color: $primary;
 			line-height: rem(30);
 			font-size: rem(18);
 			@include media-breakpoint-up(md){
