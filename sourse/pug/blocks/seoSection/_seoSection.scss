@@ -49,8 +49,6 @@
 			}
 			&__date-span{
 				position: absolute;
-				left: 6.5%;
-				top: 17%;
 				background-color: $primary;
 				font-size: 12px;
 				padding-left: 5px;
@@ -58,18 +56,29 @@
 				color: $white;
 				border-radius: 5px;
 				line-height: 21px;
+
+				left: 0;
+				top: calc(100% + 10px);
+				@include media-breakpoint-up(sm){
+					left: 6.5%;
+					top: 17%;
+				}
 			}
 			&__news-headline{
 				line-height: rem(24);
-				margin: rem(20) 0 rem(10) 0;
 				a{
 					color: $black;
+				}
+				margin: 40px 0 rem(50) 0;
+				@include media-breakpoint-up(sm){
+					margin: rem(20) 0 rem(10) 0;
 				}
 			}
 			&__news-txt{
 				font-size: rem(14px);
 				padding-bottom: rem(50);
 				margin-bottom: 0;
+
 			}
 			&__show-more-btn{
 				display: block;

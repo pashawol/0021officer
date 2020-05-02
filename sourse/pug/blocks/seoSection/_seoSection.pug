@@ -29,11 +29,11 @@ mixin indexPugSeoSection()
 		+e.show-more-btn(href="#") Загрузить еще
 
 mixin newsBoxItem(imgSrc)
-	.col-12.col-sm-6.col-lg-3
+	.col-6.col-lg-3
 		+e.img-box-container
 			+e.img-box(href="#")
 				+e.IMG.news-img(src=`img/@2x/news-item${imgSrc}.png` alt="")
 				+e.SPAN.date-span 17.04.2020
 		+e.H4.news-headline.h4
 			a(href="#") Заголовок для материала или новости
-		+e.P.news-txt Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
+		+e.P.news-txt.d-none.d-sm-block Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
