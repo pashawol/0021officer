@@ -146,12 +146,24 @@
 				}
 			}
 
-			&__learn-more-btn{
+			&__learn-more-btn {
+				@extend .btn;
+				@extend .btn-primary;
 				//background-color: red;
 				//font-family: $default-font;
 				font-weight: bold;
 				font-size: 14px;
 				padding: rem(10px) rem(30);
+				@include media-breakpoint-down(xs) {
+
+					position: absolute;
+					left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+			}
+				
 			}
 			&__{}
 			&__{}
