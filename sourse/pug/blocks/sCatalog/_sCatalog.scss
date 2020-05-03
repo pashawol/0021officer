@@ -5,7 +5,10 @@
 		padding-bottom: 0;
 
 		.clother-slider{
-			padding-bottom: 20px;
+				@include media-breakpoint-up(sm) {
+
+					padding-bottom: 20px;
+				}
 			.swiper-wrapper{
 				align-items: stretch;
 			}
@@ -22,6 +25,7 @@
 					height: calc(100% - 20px);
 					//background-color: red;
 					border: 2px dashed $white;
+					pointer-events: none;
 				}
 			}
 		}
@@ -82,24 +86,39 @@
 			&__img-txt-pills-container{
 				display: flex;
 
-				padding-bottom: rem(45);
-				flex-direction: column;
+				// padding-bottom: rem(25);
+				// flex-direction: column;
 				@include media-breakpoint-up(sm){
 					flex-direction: row;
 					padding-bottom: rem(45);
+					margin-right: 0;
 				}
+				margin-right: -10px;
 			}
 			&__img-txt-pill{
-				margin-right: rem(50);
+				@include media-breakpoint-up(sm) {
+
+					margin-right: rem(50);
+				}
+				margin-right: 10px;
 				display: flex;
 				align-items: center;
+				
 				.pill-img{
-					margin-right: rem(15);
-					width: rem(40);
+						@include media-breakpoint-up(sm) {
+
+							margin-right: rem(15);
+							width: rem(40);
+						}
+						margin-right: rem(9);
+						width: rem(24);
 					height: auto;
 				}
 				.pill-txt{
-					max-width: rem(120);
+					@include media-breakpoint-up(sm) {
+
+						max-width: rem(120);
+					}
 					font-size: rem(14);
 					line-height: rem(17);
 					color: $white;
@@ -179,7 +198,11 @@
 	.category-item{
 		border: 1.5px solid $light;
 		border-radius: rem(15);
-		margin-bottom: 30px;
+			@include media-breakpoint-up(sm) {
+
+				margin-bottom: 30px;
+			}
+			margin-bottom: 20px;
 
 		@include mt();
 		position: relative;
