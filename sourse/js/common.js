@@ -30,6 +30,7 @@ const JSCCommon = {
 		$(".modal-close-js").click(function () {
 			$.fancybox.close();
 		})
+		$.fancybox.defaults.backFocus = false;
 	},
 	// /magnificPopupCall
 	toggleMenu() {
