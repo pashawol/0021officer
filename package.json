@@ -61,6 +61,8 @@
     "inputmask": "^5.0.3",
     "ion-rangeslider": "^2.3.1",
     "jquery": "^3.5.0",
+    "js-image-zoom": "^0.7.0",
+    "m-lens": "^0.1.0",
     "npm-check-updates": "^4.1.2",
     "object-fit-images": "^3.2.4",
     "picturefill": "^3.0.3",

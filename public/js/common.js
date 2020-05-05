@@ -487,6 +487,9 @@ function eventHandler() {
 		lazy: {
 			loadPrevNext: true
 		},
+		autoplay: {
+			delay: 4000
+		},
 		//pagination
 		pagination: {
 			el: $(this).find('.clother-slider-pugin'),
@@ -570,8 +573,49 @@ function eventHandler() {
 			$('.sCategory__burger-cont').click();
 			document.body.removeEventListener('click', hideAltMenuOnMissCL);
 		}
-	} //
+	} // zoom img js-image-zoom
 
+
+	var imgZoomImages = document.querySelectorAll('.zoom-img-js');
+
+	var _iterator8 = _createForOfIteratorHelper(imgZoomImages),
+			_step8;
+
+	try {
+		for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
+			var imgItem = _step8.value;
+			$(imgItem).mlens({
+				imgSrc: $(imgItem).attr("data-big"),
+				// path of the hi-res version of the image
+				imgSrc2x: $(imgItem).attr("data-big2x"),
+				// path of the hi-res @2x version of the image
+				//for retina displays (optional)
+				lensShape: "square",
+				// shape of the lens (circle/square)
+				lensSize: ["100%", "100%"],
+				// lens dimensions (in px or in % with respect to image dimensions)
+				// can be different for X and Y dimension
+				borderSize: 1,
+				// size of the lens border (in px)
+				borderColor: "transparent",
+				// color of the lens border (#hex)
+				borderRadius: 0,
+				// border radius (optional, only if the shape is square)
+				//imgOverlay: $("#gear").attr("data-overlay"), // path of the overlay image (optional)
+				overlayAdapt: true,
+				// true if the overlay image has to adapt to the lens size (boolean)
+				zoomLevel: 1.5,
+				// zoom level multiplicator (number)
+				responsive: true // true if mlens has to be responsive (boolean)
+
+			});
+		} //
+
+	} catch (err) {
+		_iterator8.e(err);
+	} finally {
+		_iterator8.f();
+	}
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 

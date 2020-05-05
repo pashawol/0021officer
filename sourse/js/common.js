@@ -412,7 +412,9 @@ function eventHandler() {
 		lazy: {
 			loadPrevNext: true,
 		},
-
+		autoplay: {
+			delay: 4000,
+		},
 		//pagination
 		pagination: {
 			el: $(this).find('.clother-slider-pugin'),
@@ -498,6 +500,26 @@ function eventHandler() {
 			$('.sCategory__burger-cont').click();
 			document.body.removeEventListener('click', hideAltMenuOnMissCL);
 		}
+	}
+	// zoom img js-image-zoom
+	let imgZoomImages = document.querySelectorAll('.zoom-img-js');
+	for (let imgItem of imgZoomImages){
+		$(imgItem).mlens(
+			{
+				imgSrc: $(imgItem).attr("data-big"),	  // path of the hi-res version of the image
+				imgSrc2x: $(imgItem).attr("data-big2x"),  // path of the hi-res @2x version of the image
+				//for retina displays (optional)
+				lensShape: "square",                // shape of the lens (circle/square)
+				lensSize: ["100%","100%"],            // lens dimensions (in px or in % with respect to image dimensions)
+																						// can be different for X and Y dimension
+				borderSize: 1,                  // size of the lens border (in px)
+				borderColor: "transparent",            // color of the lens border (#hex)
+				borderRadius: 0,                // border radius (optional, only if the shape is square)
+				//imgOverlay: $("#gear").attr("data-overlay"), // path of the overlay image (optional)
+				overlayAdapt: true,    // true if the overlay image has to adapt to the lens size (boolean)
+				zoomLevel: 1.5,          // zoom level multiplicator (number)
+				responsive: true       // true if mlens has to be responsive (boolean)
+			});
 	}
 
 	//
