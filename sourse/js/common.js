@@ -30,6 +30,7 @@ const JSCCommon = {
 		$(".modal-close-js").click(function () {
 			$.fancybox.close();
 		})
+		$.fancybox.defaults.backFocus = false;
 	},
 	// /magnificPopupCall
 	toggleMenu() {
@@ -207,65 +208,7 @@ function eventHandler() {
 
 	});
 	// modal window
-
-	var gets = (function () {
-		var a = window.location.search;
-		var b = new Object();
-		var c;
-		a = a.substring(1).split("&");
-		for (var i = 0; i < a.length; i++) {
-			c = a[i].split("=");
-			b[c[0]] = c[1];
-		}
-		return b;
-	})();
-	// form
-
-
-	var gets = (function () {
-		var a = window.location.search;
-		var b = new Object();
-		var c;
-		a = a.substring(1).split("&");
-		for (var i = 0; i < a.length; i++) {
-			c = a[i].split("=");
-			b[c[0]] = c[1];
-		}
-		return b;
-	})();
-	// form
-	$("form").submit(function (e) {
-		e.preventDefault();
-		const th = $(this);
-		var data = th.serialize();
-		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-		$.ajax({
-			url: 'action.php',
-			type: 'POST',
-			data: data,
-		}).done(function (data) {
-
-			$.fancybox.close();
-			$.fancybox.open({
-				src: '#modal-thanks',
-				type: 'inline'
-			});
-			// window.location.replace("/thanks.html");
-			setTimeout(function () {
-				// Done Functions
-				th.trigger("reset");
-				// $.magnificPopup.close();
-				// ym(53383120, 'reachGoal', 'zakaz');
-				// yaCounter55828534.reachGoal('zakaz');
-			}, 4000);
-		}).fail(function () { });
-
-	});
-
-
+ 
 	//my custom code
 	function CustomTabsScoped(tabGroupArr) {
 		for (let tabGroupItem of tabGroupArr) {
@@ -516,7 +459,7 @@ function eventHandler() {
 				borderRadius: 0,                // border radius (optional, only if the shape is square)
 				//imgOverlay: $("#gear").attr("data-overlay"), // path of the overlay image (optional)
 				overlayAdapt: true,    // true if the overlay image has to adapt to the lens size (boolean)
-				zoomLevel: 1.5,          // zoom level multiplicator (number)
+				zoomLevel: 4,          // zoom level multiplicator (number)
 				responsive: true       // true if mlens has to be responsive (boolean)
 			});
 	}
