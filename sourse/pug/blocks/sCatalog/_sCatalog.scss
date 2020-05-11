@@ -230,23 +230,26 @@
 			top: 0;
 			right: 0;
 			bottom: 0;
-			display: flex;
 			width: 100%;
 			height: 100%;
 			border-radius: rem(15);
+			display: block;
+			text-align: center;
+			padding-bottom: 30px;
 		}
 		&__category-img-cont{
-			margin-left: auto;
-			margin-right: auto;
+			display: block;
+			margin-top: 15%;
+			height: calc(100% - 30px);
 
 			text-align: center;
-			max-width: 90%;
-
-			max-height: 60%;
-			margin-top: 10%;
+			//max-height: 50%;
+			//margin-bottom: 10%;
+			//margin-top: 10%;
 			@include media-breakpoint-up(xl){
-				max-height: 70%;
-				margin-top: 15%;
+				//max-height: 60%;
+				//margin-bottom: 10%;
+				//margin-top: 15%;
 			}
 		}
 		&__category-img{
@@ -254,6 +257,7 @@
 			max-height: 100%;
 		}
 		&__category-txt{
+			display: block;
 			padding: 0 5px;
 			position: absolute;
 			width: 100%;
@@ -269,7 +273,7 @@
 			}
 			@include media-breakpoint-up(xl) {
 				font-size: rem(22.5px);
-				bottom: rem(25);
+				bottom: rem(30);
 			}
 		}
 		&__{}
