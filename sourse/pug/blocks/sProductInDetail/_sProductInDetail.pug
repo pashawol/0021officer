@@ -23,8 +23,12 @@ mixin sliderCard()
 		+e.foto-galery-big-img-slider.swiper-container.user-select-none
 			.swiper-wrapper
 				.swiper-slide
+					.fancy-box-link()
+						img.big-product-img.zoom-img-js(src="img/@2x/main_colour.jpg" alt="")
+						
 					a.fancy-box-link(href="img/@2x/slider-product-img.jpg" data-fancybox="prodImgGroup")
 						img.big-product-img.zoom-img-js(src="img/@2x/slider-product-img.jpg" alt="")
+
 				.swiper-slide
 					a.fancy-box-link(href="img/@2x/car.png" data-fancybox="prodImgGroup")
 						img.big-product-img.zoom-img-js(src="img/@2x/car.png" alt="")
